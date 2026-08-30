@@ -25,11 +25,18 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-const PDF_URL = "/manus-storage/CATALOGOXUUMIELYXUUJABABRIL2026actual08_73d4e109.pdf";
-const EMBLEM_URL = "/manus-storage/logo-003_9c254216.png";
-const HERO_URL = "/manus-storage/xuummiel-hero-melipona_8fd14543.jpg";
-const INGREDIENTS_URL = "/manus-storage/xuummiel-ingredients-stilllife_fa1abc00.jpg";
-const ORIGIN_URL = "/manus-storage/xuummiel-origin-landscape_a262c213.jpg";
+const portableAsset = (manusPath: string, publicUrl: string) => {
+  if (typeof window === "undefined") return publicUrl;
+  const hostname = window.location.hostname.toLowerCase();
+  const isManusPreview = hostname.endsWith(".manus.computer") || hostname.endsWith(".manus.space");
+  return isManusPreview ? manusPath : publicUrl;
+};
+
+const PDF_URL = portableAsset("/manus-storage/CATALOGOXUUMIELYXUUJABABRIL2026actual08_73d4e109.pdf", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/dNquuCIXxNBVwIFX.pdf");
+const EMBLEM_URL = portableAsset("/manus-storage/logo-003_9c254216.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/HIVsFmCyefRWqBvl.png");
+const HERO_URL = portableAsset("/manus-storage/xuummiel-hero-melipona_8fd14543.jpg", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/AVMZHgtozEmBgkBw.jpg");
+const INGREDIENTS_URL = portableAsset("/manus-storage/xuummiel-ingredients-stilllife_fa1abc00.jpg", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LPPwmLxOTrbpkFxS.jpg");
+const ORIGIN_URL = portableAsset("/manus-storage/xuummiel-origin-landscape_a262c213.jpg", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FxmqVvkyJSaIQvwZ.jpg");
 
 type Category = "Todo" | "Jabones" | "Cremas" | "Mieles y elixires" | "Kits";
 type Collection = Exclude<Category, "Todo">;
@@ -48,19 +55,19 @@ type Product = {
 };
 
 const catalogPages = {
-  p04: "/manus-storage/xuummiel-catalog-page-04_d095c64d.png",
-  p05: "/manus-storage/xuummiel-catalog-page-05_dc876275.png",
-  p06: "/manus-storage/xuummiel-catalog-page-06_6174ce39.png",
-  p07: "/manus-storage/xuummiel-catalog-page-07_12569439.png",
-  p08: "/manus-storage/xuummiel-catalog-page-08_914ee607.png",
-  p09: "/manus-storage/xuummiel-catalog-page-09_b8ad9de0.png",
-  p10: "/manus-storage/xuummiel-catalog-page-10_27bc1928.png",
-  p11: "/manus-storage/xuummiel-catalog-page-11_3486ac38.png",
-  p13: "/manus-storage/xuummiel-catalog-page-13_f953b40b.png",
-  p14: "/manus-storage/xuummiel-catalog-page-14_9835353b.png",
-  p15: "/manus-storage/xuummiel-catalog-page-15_54be5a09.png",
-  p17: "/manus-storage/xuummiel-catalog-page-17_e2bac427.png",
-  p18: "/manus-storage/xuummiel-catalog-page-18_492f1910.png",
+  p04: portableAsset("/manus-storage/xuummiel-catalog-page-04_d095c64d.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/PNViugmhcGcNYVxx.png"),
+  p05: portableAsset("/manus-storage/xuummiel-catalog-page-05_dc876275.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/PpYlgCwGDtaLjFfv.png"),
+  p06: portableAsset("/manus-storage/xuummiel-catalog-page-06_6174ce39.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/jJPUKRRhYKQjhjoD.png"),
+  p07: portableAsset("/manus-storage/xuummiel-catalog-page-07_12569439.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/AXtdAXpHJllgByJp.png"),
+  p08: portableAsset("/manus-storage/xuummiel-catalog-page-08_914ee607.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/snoOqknWbpcAQGGx.png"),
+  p09: portableAsset("/manus-storage/xuummiel-catalog-page-09_b8ad9de0.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/HfHzsHotxKBdnkHp.png"),
+  p10: portableAsset("/manus-storage/xuummiel-catalog-page-10_27bc1928.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/BWmEukEdLcyVgwgt.png"),
+  p11: portableAsset("/manus-storage/xuummiel-catalog-page-11_3486ac38.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/mwXwfrjYriazpeqD.png"),
+  p13: portableAsset("/manus-storage/xuummiel-catalog-page-13_f953b40b.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/rKKuCXcXewshAdZZ.png"),
+  p14: portableAsset("/manus-storage/xuummiel-catalog-page-14_9835353b.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/guobMUgKXnkRiEiz.png"),
+  p15: portableAsset("/manus-storage/xuummiel-catalog-page-15_54be5a09.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/QDWEUpZtexsyzXxS.png"),
+  p17: portableAsset("/manus-storage/xuummiel-catalog-page-17_e2bac427.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LIqmwCNzyDfwKxhW.png"),
+  p18: portableAsset("/manus-storage/xuummiel-catalog-page-18_492f1910.png", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LNHcNELnjnDwXSev.png"),
 };
 
 const products: Product[] = [
