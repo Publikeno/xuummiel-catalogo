@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/dialog";
 
 const PDF_URL = "/manus-storage/CATALOGOXUUMIELYXUUJABABRIL2026actual08_73d4e109.pdf";
-const EMBLEM_URL = "/manus-storage/xuummiel-emblem_0dbf59e3.png";
+const EMBLEM_URL = "/manus-storage/logo-003_9c254216.png";
 const HERO_URL = "/manus-storage/xuummiel-hero-melipona_8fd14543.jpg";
 const INGREDIENTS_URL = "/manus-storage/xuummiel-ingredients-stilllife_fa1abc00.jpg";
 const ORIGIN_URL = "/manus-storage/xuummiel-origin-landscape_a262c213.jpg";
@@ -277,9 +277,7 @@ export default function Home() {
 
       <header className="site-header">
         <a href="#inicio" className="brand-lockup" aria-label="XUUMIEL, inicio">
-          <img className="brand-emblem" src={EMBLEM_URL} alt="Emblema XUUMIEL" />
-          <span className="brand-name">XUUMIEL</span>
-          <span className="brand-subline">Mieles de Quintana Roo</span>
+          <img className="brand-emblem" src={EMBLEM_URL} alt="Logotipo original XUUMIEL con pirámides" />
         </a>
 
         <nav className="desktop-nav" aria-label="Navegación principal">
@@ -461,8 +459,8 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="footer-brand">
-          <img src={EMBLEM_URL} alt="Emblema XUUMIEL" />
-          <div><span>XUUMIEL</span><small>Mieles de Quintana Roo México</small></div>
+          <img src={EMBLEM_URL} alt="Logotipo original XUUMIEL con pirámides" />
+          <div><small>Mieles de Quintana Roo México</small></div>
         </div>
         <p>Catálogo promocional elaborado a partir de la edición 2026 proporcionada. Los usos y beneficios se muestran como referencias de la fuente original.</p>
         <div className="footer-links">

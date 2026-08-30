@@ -107,3 +107,9 @@
   - texturas suaves,
   - marcos de exhibición para producto,
   - motivos de panal y líneas botánicas.
+
+## Nota adicional sobre el logotipo original
+
+En la revisión visual de las páginas 1 y 2 del catálogo se confirmó que el emblema original que el usuario desea conservar es el de **las pirámides**, presentado dentro de un recuadro blanco con trazo dorado y la palabra **XUUMIEL** debajo. Este emblema debe sustituir al símbolo abstracto generado para la web y mantenerse también en el favicon, respetando su forma original.
+
+Durante la extracción de imágenes embebidas de la primera página, los primeros recursos revisados correspondieron al ícono de abejas y al sello «Hecho en Quintana Roo», por lo que no deben utilizarse como sustituto del emblema solicitado. El recurso de pirámides se seleccionará entre los elementos restantes de la misma página.
