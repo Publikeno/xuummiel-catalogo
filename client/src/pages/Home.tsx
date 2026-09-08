@@ -296,11 +296,21 @@ const products: Product[] = [
 ];
 
 const categories: Category[] = ["Todo", "Jabones", "Cremas", "Mieles y elixires", "Kits"];
+const galleryCollections = [
+  "Todas",
+  "Jabones artesanales",
+  "Cuidado facial y corporal",
+  "Cuidado capilar",
+  "Protección natural",
+  "Mieles y elixires",
+  "Kits y regalos",
+] as const;
+type GalleryCollection = typeof galleryCollections[number];
 
 type CatalogPhoto = {
   id: string;
   name: string;
-  category: string;
+  category: GalleryCollection;
   image: string;
   alt: string;
   note: string;
@@ -343,6 +353,16 @@ function CategoryIcon({ category }: { category: Category }) {
   return <Hexagon size={17} strokeWidth={1.8} />;
 }
 
+function GalleryCollectionIcon({ collection }: { collection: GalleryCollection }) {
+  if (collection === "Jabones artesanales") return <Sparkles size={17} strokeWidth={1.8} />;
+  if (collection === "Cuidado facial y corporal") return <Flower2 size={17} strokeWidth={1.8} />;
+  if (collection === "Cuidado capilar") return <Leaf size={17} strokeWidth={1.8} />;
+  if (collection === "Protección natural") return <Hexagon size={17} strokeWidth={1.8} />;
+  if (collection === "Mieles y elixires") return <Droplets size={17} strokeWidth={1.8} />;
+  if (collection === "Kits y regalos") return <PackageOpen size={17} strokeWidth={1.8} />;
+  return <Hexagon size={17} strokeWidth={1.8} />;
+}
+
 function ProductCard({ product, onOpen }: { product: Product; onOpen: (product: Product) => void }) {
   return (
     <button
@@ -373,12 +393,18 @@ function ProductCard({ product, onOpen }: { product: Product; onOpen: (product: 
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<Category>("Todo");
+  const [selectedGalleryCollection, setSelectedGalleryCollection] = useState<GalleryCollection>("Todas");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const filteredProducts = useMemo(
     () => (selectedCategory === "Todo" ? products : products.filter((product) => product.category === selectedCategory)),
     [selectedCategory],
+  );
+
+  const filteredGalleryPhotos = useMemo(
+    () => selectedGalleryCollection === "Todas" ? catalogPhotos : catalogPhotos.filter((photo) => photo.category === selectedGalleryCollection),
+    [selectedGalleryCollection],
   );
 
   const scrollToCatalog = () => document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
@@ -512,8 +538,25 @@ export default function Home() {
           </div>
           <p>Las 26 fotografías recibidas ya están publicadas en la página. Las imágenes identificadas se vinculan a su producto; las demás quedan visibles como nuevas presentaciones o pendientes de confirmar.</p>
         </div>
+        <div className="gallery-filter-strip" role="tablist" aria-label="Filtrar imágenes por colección">
+          {galleryCollections.map((collection) => (
+            <button
+              type="button"
+              key={collection}
+              role="tab"
+              aria-selected={selectedGalleryCollection === collection}
+              className={`category-filter gallery-filter ${selectedGalleryCollection === collection ? "is-active" : ""}`}
+              onClick={() => setSelectedGalleryCollection(collection)}
+            >
+              <GalleryCollectionIcon collection={collection} />
+              {collection}
+              <span>{collection === "Todas" ? catalogPhotos.length : catalogPhotos.filter((photo) => photo.category === collection).length}</span>
+            </button>
+          ))}
+        </div>
+        <div className="gallery-meta"><span><span className="catalog-line" /> {filteredGalleryPhotos.length} imágenes en esta colección</span><span className="gallery-meta-note">26 imágenes publicadas</span></div>
         <div className="photo-gallery-grid">
-          {catalogPhotos.map((photo) => (
+          {filteredGalleryPhotos.map((photo) => (
             <figure className="gallery-photo-card" key={photo.id}>
               <div className="gallery-photo-visual">
                 <img src={photo.image} alt={photo.alt} />
