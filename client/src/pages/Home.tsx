@@ -37,6 +37,8 @@ const EMBLEM_URL = portableAsset("/manus-storage/logo-003_9c254216.png", "https:
 const HERO_URL = portableAsset("/manus-storage/xuummiel-hero-melipona_8fd14543.jpg", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/AVMZHgtozEmBgkBw.jpg");
 const INGREDIENTS_URL = portableAsset("/manus-storage/xuummiel-ingredients-stilllife_fa1abc00.jpg", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LPPwmLxOTrbpkFxS.jpg");
 const ORIGIN_URL = portableAsset("/manus-storage/xuummiel-origin-landscape_a262c213.jpg", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FxmqVvkyJSaIQvwZ.jpg");
+const TURMERIC_SOAP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/xbGBfYHhWjzuDLCR.webp";
+const HONEYCOMB_SOAP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/qkCaBQZIoxFjAusW.webp";
 
 type Category = "Todo" | "Jabones" | "Cremas" | "Mieles y elixires" | "Kits";
 type Collection = Exclude<Category, "Todo">;
@@ -51,6 +53,9 @@ type Product = {
   description: string;
   page: number;
   image: string;
+  imageAlt?: string;
+  imageCaption?: string;
+  isProductPhoto?: boolean;
   label?: string;
 };
 
@@ -113,7 +118,10 @@ const products: Product[] = [
     ingredient: "Miel melipona · aroma madera",
     description: "Una barra refrescante con aroma a madera, inspirada en las materias del taller y la colmena.",
     page: 6,
-    image: catalogPages.p06,
+    image: HONEYCOMB_SOAP_URL,
+    imageAlt: "Jabón artesanal de miel con relieve de panal y una pequeña abeja.",
+    imageCaption: "Foto actualizada del producto · ficha catálogo 2026 · p. 6",
+    isProductPhoto: true,
   },
   {
     id: "neem",
@@ -135,7 +143,10 @@ const products: Product[] = [
     ingredient: "Cúrcuma · coco · miel melipona",
     description: "Fórmula de cúrcuma, coco y miel de abejas meliponas. Consulta la lámina original para sus beneficios descritos.",
     page: 8,
-    image: catalogPages.p08,
+    image: TURMERIC_SOAP_URL,
+    imageAlt: "Jabón artesanal de cúrcuma con etiqueta XUUMIEL.",
+    imageCaption: "Foto actualizada del producto · ficha catálogo 2026 · p. 8",
+    isProductPhoto: true,
     label: "Nuevo",
   },
   {
@@ -246,8 +257,8 @@ function ProductCard({ product, onOpen }: { product: Product; onOpen: (product: 
       onClick={() => onOpen(product)}
       aria-label={`Ver detalles de ${product.name}`}
     >
-      <div className="product-visual">
-        <img src={product.image} alt={`Lámina del catálogo para ${product.name}`} />
+      <div className={`product-visual ${product.isProductPhoto ? "is-product-photo" : ""}`}>
+        <img src={product.image} alt={product.imageAlt ?? `Lámina del catálogo para ${product.name}`} />
         <div className="product-image-tint" />
         <span className="page-chip">p. {product.page}</span>
         {product.label && <span className="new-chip">{product.label}</span>}
@@ -479,9 +490,9 @@ export default function Home() {
       <Dialog open={Boolean(selectedProduct)} onOpenChange={(open) => !open && setSelectedProduct(null)}>
         {selectedProduct && (
           <DialogContent className="product-dialog">
-            <div className="product-dialog-visual">
-              <img src={selectedProduct.image} alt={`Lámina del catálogo para ${selectedProduct.name}`} />
-              <span>Fuente: catálogo 2026 · p. {selectedProduct.page}</span>
+            <div className={`product-dialog-visual ${selectedProduct.isProductPhoto ? "is-product-photo" : ""}`}>
+              <img src={selectedProduct.image} alt={selectedProduct.imageAlt ?? `Lámina del catálogo para ${selectedProduct.name}`} />
+              <span>{selectedProduct.imageCaption ?? `Fuente: catálogo 2026 · p. ${selectedProduct.page}`}</span>
             </div>
             <div className="product-dialog-copy">
               <DialogHeader>
