@@ -37,8 +37,15 @@ const EMBLEM_URL = portableAsset("/manus-storage/logo-003_9c254216.png", "https:
 const HERO_URL = portableAsset("/manus-storage/xuummiel-hero-melipona_8fd14543.jpg", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/AVMZHgtozEmBgkBw.jpg");
 const INGREDIENTS_URL = portableAsset("/manus-storage/xuummiel-ingredients-stilllife_fa1abc00.jpg", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LPPwmLxOTrbpkFxS.jpg");
 const ORIGIN_URL = portableAsset("/manus-storage/xuummiel-origin-landscape_a262c213.jpg", "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FxmqVvkyJSaIQvwZ.jpg");
-const TURMERIC_SOAP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/xbGBfYHhWjzuDLCR.webp";
-const HONEYCOMB_SOAP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/qkCaBQZIoxFjAusW.webp";
+const ARROZ_SOAP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/vKdMIpvKquFkJYTN.png";
+const TEPEZCOHUITE_SOAP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/MsOZTjFDNADwnXdY.png";
+const HONEYCOMB_SOAP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/DdIYdkhuGAzvNQIX.png";
+const NEEM_HONEY_SOAP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nVukVmcbTQxCpgtn.png";
+const TURMERIC_SOAP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/YeLrghWIlVrLcWdU.png";
+const STRAWBERRY_SOAP_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/KTJzlUwgSbTFuXuM.png";
+const RCH_CREAM_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/sABTLISpVCTBrjSM.png";
+const HONEY_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/VkEKfdnqSiaFipIM.png";
+const CACAO_ELIXIR_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/WhPQiQqlRzAaajOP.png";
 
 type Category = "Todo" | "Jabones" | "Cremas" | "Mieles y elixires" | "Kits";
 type Collection = Exclude<Category, "Todo">;
@@ -85,7 +92,10 @@ const products: Product[] = [
     ingredient: "Arroz · coco",
     description: "El catálogo lo presenta como una barra exfoliante y suavizante que acompaña a un tono de piel uniforme.",
     page: 4,
-    image: catalogPages.p04,
+    image: ARROZ_SOAP_URL,
+    imageAlt: "Jabón artesanal de arroz base coco con etiqueta XUUJÁAB.",
+    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 4",
+    isProductPhoto: true,
   },
   {
     id: "avena",
@@ -107,7 +117,10 @@ const products: Product[] = [
     ingredient: "Tepezcohuite · miel melipona",
     description: "Barra de tepezcohuite con miel de abejas meliponas, descrita en el catálogo como parte de un ritual de cuidado artesanal.",
     page: 5,
-    image: catalogPages.p05,
+    image: TEPEZCOHUITE_SOAP_URL,
+    imageAlt: "Jabón artesanal oscuro de tepezcohuite con miel de abejas meliponas.",
+    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 5",
+    isProductPhoto: true,
   },
   {
     id: "miel-madera",
@@ -120,7 +133,7 @@ const products: Product[] = [
     page: 6,
     image: HONEYCOMB_SOAP_URL,
     imageAlt: "Jabón artesanal de miel con relieve de panal y una pequeña abeja.",
-    imageCaption: "Foto actualizada del producto · ficha catálogo 2026 · p. 6",
+    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 6",
     isProductPhoto: true,
   },
   {
@@ -132,7 +145,10 @@ const products: Product[] = [
     ingredient: "Neem · coco",
     description: "El catálogo propone esta fórmula de neem base coco como una opción suavizante para piel seca.",
     page: 7,
-    image: catalogPages.p07,
+    image: NEEM_HONEY_SOAP_URL,
+    imageAlt: "Jabón artesanal de neem y miel de abejas meliponas con etiqueta verde.",
+    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 7",
+    isProductPhoto: true,
   },
   {
     id: "curcuma",
@@ -145,7 +161,7 @@ const products: Product[] = [
     page: 8,
     image: TURMERIC_SOAP_URL,
     imageAlt: "Jabón artesanal de cúrcuma con etiqueta XUUMIEL.",
-    imageCaption: "Foto actualizada del producto · ficha catálogo 2026 · p. 8",
+    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 8",
     isProductPhoto: true,
     label: "Nuevo",
   },
@@ -158,7 +174,10 @@ const products: Product[] = [
     ingredient: "Leche de cabra · fresa champagne",
     description: "Jabón de leche de cabra y miel de abejas meliponas en la fragancia fresa champagne.",
     page: 9,
-    image: catalogPages.p09,
+    image: STRAWBERRY_SOAP_URL,
+    imageAlt: "Jabón artesanal rosa de fresa champagne con etiqueta de producto.",
+    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 9",
+    isProductPhoto: true,
   },
   {
     id: "sabila",
@@ -180,7 +199,10 @@ const products: Product[] = [
     ingredient: "Sésamo · miel melipona · colágeno",
     description: "Crema hidratante para rostro y cuello. El catálogo describe su enfoque antioxidante, hidratante y de cuidado diario.",
     page: 13,
-    image: catalogPages.p13,
+    image: RCH_CREAM_URL,
+    imageAlt: "Crema RCH regeneradora con semilla de sésamo, miel melipona y colágeno.",
+    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 13",
+    isProductPhoto: true,
   },
   {
     id: "rf",
@@ -202,7 +224,10 @@ const products: Product[] = [
     ingredient: "Miel de Melipona beecheii",
     description: "Presentaciones en vidrio oscuro. El catálogo reúne usos tradicionales y una referencia sobre su composición bioactiva.",
     page: 17,
-    image: catalogPages.p17,
+    image: HONEY_URL,
+    imageAlt: "Frasco artesanal de miel de abejas meliponas con tapa dorada.",
+    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 17",
+    isProductPhoto: true,
   },
   {
     id: "cacao",
@@ -213,7 +238,10 @@ const products: Product[] = [
     ingredient: "Miel melipona · cacao",
     description: "Una mezcla de miel de abejas meliponas y cacao puro presentada en envases de cristal oscuro.",
     page: 18,
-    image: catalogPages.p18,
+    image: CACAO_ELIXIR_URL,
+    imageAlt: "Elixir artesanal de miel de abejas meliponas y cacao en frasco con gotero.",
+    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 18",
+    isProductPhoto: true,
   },
   {
     id: "kit-cartera",
