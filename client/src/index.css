@@ -157,6 +157,9 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
 .origin-copy .eyebrow { color: #e7c880; }
 .origin-copy h2, .catalog-heading h2, .ritual-copy h2, .kits-intro h2, .pdf-copy h2 { margin-bottom: 1.3rem; font-family: "DM Serif Display", Georgia, serif; font-size: clamp(2.65rem, 4.1vw, 4.4rem); font-weight: 400; letter-spacing: -0.04em; line-height: 0.97; }
 .origin-copy p:not(.eyebrow) { max-width: 480px; margin-bottom: 1rem; color: #d8e0d2; font-size: 0.88rem; line-height: 1.7; }
+.conservation-priority { display: grid; gap: 0.25rem; width: fit-content; margin: 0 0 1.25rem; padding: 0.8rem 1rem; border-left: 2px solid var(--honey); background: rgb(247 214 126 / 10%); color: #f4d98d; }
+.conservation-priority strong { font-size: 0.67rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.conservation-priority span { color: #f5eee0; font-size: 0.78rem; line-height: 1.35; }
 .origin-link { display: inline-flex; align-items: center; gap: 0.45rem; width: fit-content; margin-top: 1rem; padding-bottom: 0.22rem; border-bottom: 1px solid #e7c880; color: #e7c880; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.06em; text-decoration: none; text-transform: uppercase; transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out); }
 .origin-link:hover { border-color: white; color: white; }
 .origin-marker { position: absolute; right: 1.8rem; top: 1.5rem; display: flex; align-items: center; gap: 0.4rem; color: rgb(241 226 190 / 78%); font-family: "DM Serif Display", Georgia, serif; font-size: 1.25rem; }

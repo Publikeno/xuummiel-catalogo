@@ -727,7 +727,7 @@ export default function Home() {
         </a>
 
         <nav className="desktop-nav" aria-label="Navegación principal">
-          <a href="#origen">Origen</a>
+          <a href="#origen">Conservación</a>
           <a href="#catalogo">Colecciones</a>
           <a href="#galeria">Galería</a>
           <a href="#ritual">Rituales</a>
@@ -749,7 +749,7 @@ export default function Home() {
         </button>
         {mobileMenuOpen && (
           <nav id="mobile-navigation" className="mobile-nav" aria-label="Navegación móvil">
-            <a href="#origen" onClick={() => setMobileMenuOpen(false)}>Origen</a>
+            <a href="#origen" onClick={() => setMobileMenuOpen(false)}>Conservación</a>
             <a href="#catalogo" onClick={() => setMobileMenuOpen(false)}>Colecciones</a>
             <a href="#galeria" onClick={() => setMobileMenuOpen(false)}>Galería</a>
             <a href="#ritual" onClick={() => setMobileMenuOpen(false)}>Rituales</a>
@@ -764,12 +764,12 @@ export default function Home() {
           <div className="hero-copy">
             <p className="eyebrow"><span className="eyebrow-dot" /> Colección 2026 · Leona Vicario, Q. Roo</p>
             <h1 id="hero-title">Del taller de la <em>melipona</em> a tu ritual diario.</h1>
-            <p className="hero-intro">Jabones, cremas y mieles artesanales que reúnen ingredientes botánicos, oficio local y la riqueza de la Península de Yucatán.</p>
+            <p className="hero-intro">La conservación y reproducción responsable de la abeja nativa <i>Melipona beecheii</i> es el propósito central. El catálogo reúne productos que ayudan a sostener esta ruta viva.</p>
             <div className="hero-actions">
               <button type="button" className="primary-action" onClick={scrollToCatalog}>
                 Explorar colecciones <ArrowDown size={17} />
               </button>
-              <a className="text-action" href="#origen">Conocer el origen <ChevronRight size={17} /></a>
+              <a className="text-action" href="#origen">Conocer la misión <ChevronRight size={17} /></a>
             </div>
             <div className="hero-footnotes">
               <span><b>{categories.length - 1}</b> categorías</span>
@@ -789,15 +789,19 @@ export default function Home() {
       <section id="origen" className="origin-section" aria-labelledby="origin-title">
         <div className="origin-visual">
           <img src={ORIGIN_URL} alt="Paisaje botánico de Quintana Roo con una caja de abejas artesanales" />
-          <div className="origin-visual-caption">Origen peninsular<br /><span>La ruta de la miel</span></div>
+          <div className="origin-visual-caption">Conservación viva<br /><span>Melipona beecheii · Quintana Roo</span></div>
         </div>
         <div className="origin-copy">
-          <p className="eyebrow dark"><Leaf size={16} /> Materia local</p>
-          <h2 id="origin-title">Miel que cuenta de dónde viene.</h2>
-          <p>En XUUMIEL, la miel de abejas meliponas acompaña fórmulas para el cuidado cotidiano. La colección toma como punto de partida la tierra, los ingredientes y los ritmos de Quintana Roo.</p>
-          <p>El catálogo cita evidencia sobre la composición bioactiva y capacidad antioxidante de la miel de <i>Melipona beecheii</i>; en esta web la celebramos como parte de una tradición viva, sin reemplazar el consejo de profesionales de la salud.</p>
+          <p className="eyebrow dark"><Leaf size={16} /> Propósito central</p>
+          <h2 id="origin-title">Conservar la melipona es el propósito.</h2>
+          <div className="conservation-priority">
+            <strong>Conservación y reproducción</strong>
+            <span>de la abeja nativa <i>Melipona beecheii</i></span>
+          </div>
+          <p>El objetivo primordial de XUUMIEL es contribuir a la conservación y reproducción responsable de las abejas nativas <i>Melipona beecheii</i>, respetando sus ciclos, su hábitat y los saberes que permiten cuidarlas en Quintana Roo.</p>
+          <p>La cultura y la historia de las mujeres artesanas, el monte y el meliponario forman parte del contexto de esta misión y se documentan en el catálogo visual. Los productos reúnen esa ruta de cuidado sin sustituir el consejo de profesionales de la salud.</p>
           <a className="origin-link" href={PDF_URL} target="_blank" rel="noreferrer">
-            Leer la nota de origen en el catálogo <ArrowUpRight size={16} />
+            Ver cultura e historia en el catálogo <ArrowUpRight size={16} />
           </a>
         </div>
         <div className="origin-marker" aria-hidden="true"><Hexagon size={24} /><span>16</span></div>
