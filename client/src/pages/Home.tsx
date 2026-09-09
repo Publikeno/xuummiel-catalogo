@@ -728,6 +728,7 @@ export default function Home() {
 
         <nav className="desktop-nav" aria-label="Navegación principal">
           <a href="#origen">Conservación</a>
+          <a href="#historia-cultura">Historia y cultura</a>
           <a href="#catalogo">Colecciones</a>
           <a href="#galeria">Galería</a>
           <a href="#ritual">Rituales</a>
@@ -750,6 +751,7 @@ export default function Home() {
         {mobileMenuOpen && (
           <nav id="mobile-navigation" className="mobile-nav" aria-label="Navegación móvil">
             <a href="#origen" onClick={() => setMobileMenuOpen(false)}>Conservación</a>
+            <a href="#historia-cultura" onClick={() => setMobileMenuOpen(false)}>Historia y cultura</a>
             <a href="#catalogo" onClick={() => setMobileMenuOpen(false)}>Colecciones</a>
             <a href="#galeria" onClick={() => setMobileMenuOpen(false)}>Galería</a>
             <a href="#ritual" onClick={() => setMobileMenuOpen(false)}>Rituales</a>
@@ -805,6 +807,57 @@ export default function Home() {
           </a>
         </div>
         <div className="origin-marker" aria-hidden="true"><Hexagon size={24} /><span>16</span></div>
+      </section>
+
+      <section id="historia-cultura" className="story-section" aria-labelledby="story-title">
+        <div className="story-heading">
+          <div>
+            <p className="eyebrow dark"><BookOpen size={16} /> Historia y cultura</p>
+            <h2 id="story-title">Cuidar una abeja también es cuidar una forma de vida.</h2>
+          </div>
+          <p>La conservación de <i>Melipona beecheii</i> reúne naturaleza, memoria comunitaria y trabajo artesanal. Esta historia acompaña cada decisión del meliponario y cada pieza del catálogo.</p>
+        </div>
+        <div className="story-grid">
+          <article className="story-card story-card-featured">
+            <span className="story-number">01</span>
+            <div>
+              <p className="story-kicker">La especie</p>
+              <h3>Una abeja nativa sin aguijón.</h3>
+              <p><i>Melipona beecheii</i> forma parte de la biodiversidad de la Península de Yucatán. Su cuidado exige conocer sus ritmos, proteger su entorno y mantener colonias sanas.</p>
+            </div>
+          </article>
+          <article className="story-card">
+            <span className="story-number">02</span>
+            <div>
+              <p className="story-kicker">El meliponario</p>
+              <h3>El jobón guarda la memoria del nido.</h3>
+              <p>Los jobones, troncos ahuecados que reproducen el nido natural, son espacios de observación y cuidado. Allí la reproducción se acompaña con respeto durante todo el año.</p>
+            </div>
+          </article>
+          <article className="story-card">
+            <span className="story-number">03</span>
+            <div>
+              <p className="story-kicker">El territorio</p>
+              <h3>El monte sostiene la floración.</h3>
+              <p>Conservar también significa cuidar las plantas y árboles nativos que alimentan a las abejas. La producción sigue los ciclos del monte y la cosecha solo ocurre cuando corresponde.</p>
+            </div>
+          </article>
+          <article className="story-card">
+            <span className="story-number">04</span>
+            <div>
+              <p className="story-kicker">Las artesanas</p>
+              <h3>El saber se comparte con las manos.</h3>
+              <p>Las mujeres artesanas de Leona Vicario mantienen viva la continuidad del oficio: aprender del meliponario, transformar lo cosechado y transmitir prácticas de higiene, seguridad y calidad.</p>
+            </div>
+          </article>
+        </div>
+        <div className="story-callout">
+          <div className="story-callout-mark" aria-hidden="true"><Leaf size={20} /></div>
+          <div>
+            <strong>Conservar es reproducir, educar y proteger.</strong>
+            <p>El catálogo y sus productos son una puerta de entrada a esta misión; el objetivo permanece en la especie nativa, su hábitat y las personas que la cuidan.</p>
+          </div>
+        </div>
       </section>
 
       <section id="catalogo" className="catalog-section" aria-labelledby="catalog-title">
