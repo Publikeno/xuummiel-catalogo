@@ -75,7 +75,18 @@ const GALLERY_URLS = {
   neemHoneySoap: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/tHPfKyyWZZqrrwZs.png",
 };
 
-type Category = "Todo" | "Jabones" | "Cremas" | "Mieles y elixires" | "Kits";
+type Category =
+  | "Todo"
+  | "Miel Melipona"
+  | "Jabones"
+  | "Cremas"
+  | "Multivitamínicos"
+  | "Propóleo"
+  | "Hidromiel"
+  | "Miel Apis"
+  | "Cacao"
+  | "Kits y regalos"
+  | "Estropajos";
 type Collection = Exclude<Category, "Todo">;
 
 type Product = {
@@ -83,10 +94,12 @@ type Product = {
   name: string;
   category: Collection;
   price: string;
+  priceDetails?: string;
   size: string;
   ingredient: string;
   description: string;
-  page: number;
+  benefits?: string[];
+  page: number | null;
   image: string;
   imageAlt?: string;
   imageCaption?: string;
@@ -112,190 +125,493 @@ const catalogPages = {
 
 const products: Product[] = [
   {
-    id: "arroz",
-    name: "Jabón de arroz",
+    id: "melipona-10",
+    name: "Miel Melipona Beecheii · gotero de 10 ml",
+    category: "Miel Melipona",
+    price: "$130",
+    size: "10 ml",
+    ingredient: "Miel Melipona Beecheii",
+    description: "Miel Melipona Beecheii en un gotero compacto, ideal para regalo, degustación o consumo personal.",
+    benefits: ["Sabor y aroma característicos de la miel Melipona", "Presentación práctica para llevar o regalar", "Producto de identidad y tradición de Quintana Roo"],
+    page: null,
+    image: HONEY_URL,
+    imageAlt: "Gotero de miel de abejas meliponas Beecheii.",
+    imageCaption: "Foto de referencia de la línea Melipona · presentación de 10 ml por confirmar",
+  },
+  {
+    id: "melipona-20",
+    name: "Miel Melipona Beecheii · gotero de 20 ml",
+    category: "Miel Melipona",
+    price: "$230",
+    size: "20 ml",
+    ingredient: "Miel Melipona Beecheii",
+    description: "Miel Melipona Beecheii en una presentación intermedia para consumo personal o regalo turístico.",
+    benefits: ["Miel de sabor distintivo y producción local", "Formato fácil de transportar", "Presentación adecuada para obsequio o degustación"],
+    page: null,
+    image: HONEY_URL,
+    imageAlt: "Gotero de miel de abejas meliponas Beecheii.",
+    imageCaption: "Foto de referencia de la línea Melipona · presentación de 20 ml por confirmar",
+  },
+  {
+    id: "melipona-30",
+    name: "Miel Melipona Beecheii · gotero de 30 ml",
+    category: "Miel Melipona",
+    price: "$320",
+    size: "30 ml · frasco redondo o cuadrado",
+    ingredient: "Miel Melipona Beecheii · cristal oscuro",
+    description: "Miel Melipona Beecheii disponible en dos formas de frasco de cristal oscuro: redondo y cuadrado.",
+    benefits: ["Dos diseños de frasco para elegir", "Cristal oscuro con presentación artesanal", "Tamaño práctico para regalo o consumo personal"],
+    page: null,
+    image: HONEY_URL,
+    imageAlt: "Frasco de miel de abejas meliponas Beecheii.",
+    imageCaption: "Foto de referencia de la línea Melipona · confirmar disponibilidad de ambas formas",
+  },
+  {
+    id: "melipona-50",
+    name: "Miel Melipona Beecheii · frasco cuadrado",
+    category: "Miel Melipona",
+    price: "$440",
+    size: "50 ml · cristal cuadrado",
+    ingredient: "Miel Melipona Beecheii · cristal oscuro",
+    description: "Miel Melipona Beecheii en frasco de cristal cuadrado de 50 ml, una presentación distintiva para exhibición y regalo.",
+    benefits: ["Diseño cuadrado que destaca en anaquel", "Presentación de cristal para regalo turístico", "Contenido práctico para degustación o consumo personal"],
+    page: null,
+    image: HONEY_URL,
+    imageAlt: "Frasco cuadrado de miel de abejas meliponas Beecheii.",
+    imageCaption: "Foto de referencia de la línea Melipona · frasco cuadrado de 50 ml por cargar",
+  },
+  {
+    id: "melipona-estuche-50",
+    name: "Miel Melipona Beecheii · estuche pirámide",
+    category: "Kits y regalos",
+    price: "$590",
+    size: "Estuche de madera · frasco de 50 ml",
+    ingredient: "Miel Melipona Beecheii · madera",
+    description: "Presentación de Miel Melipona Beecheii en un estuche de madera con forma de pirámide, pensada para regalo.",
+    benefits: ["Empaque de madera con alto valor de presentación", "Ideal para regalos turísticos y ocasiones especiales", "Combina producto local con una presentación artesanal"],
+    page: null,
+    image: catalogPages.p17,
+    imageAlt: "Presentación artesanal de miel melipona para regalo.",
+    imageCaption: "Foto de referencia de estuche pirámide · presentación de 50 ml por cargar",
+  },
+  {
+    id: "melipona-estuche-600",
+    name: "Miel Melipona Beecheii · estuche pirámide grande",
+    category: "Kits y regalos",
+    price: "$1,850",
+    size: "Estuche de madera · presentación de 600 ml",
+    ingredient: "Miel Melipona Beecheii · madera",
+    description: "Presentación de mayor contenido de Miel Melipona Beecheii con estuche de madera en forma de pirámide.",
+    benefits: ["Formato de mayor contenido para regalo especial", "Estuche de madera con identidad artesanal", "Presentación llamativa para visitantes y coleccionistas"],
+    page: null,
+    image: catalogPages.p17,
+    imageAlt: "Presentación artesanal de miel melipona para regalo.",
+    imageCaption: "Foto de referencia de estuche pirámide · confirmar contenido y fotografía de 600 ml",
+  },
+  {
+    id: "jabon-coco-arroz",
+    name: "Jabón artesanal de coco y arroz",
     category: "Jabones",
-    price: "$70",
+    price: "$77",
     size: "70 g",
-    ingredient: "Arroz · coco",
-    description: "El catálogo lo presenta como una barra exfoliante y suavizante que acompaña a un tono de piel uniforme.",
+    ingredient: "Coco · arroz",
+    description: "Jabón artesanal elaborado con coco y arroz para una limpieza cotidiana con una sensación suave y cremosa.",
+    benefits: ["Limpieza diaria de la piel", "Sensación suave y confortable durante el baño", "Alternativa artesanal para una rutina de cuidado personal"],
     page: 4,
     image: ARROZ_SOAP_URL,
-    imageAlt: "Jabón artesanal de arroz base coco con etiqueta XUUJÁAB.",
-    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 4",
+    imageAlt: "Jabón artesanal de coco y arroz con etiqueta XUUJÁAB.",
+    imageCaption: "Foto de producto · jabón de coco y arroz · presentación de 70 g",
     isProductPhoto: true,
   },
   {
-    id: "avena",
-    name: "Jabón de avena",
+    id: "jabon-neem",
+    name: "Jabón artesanal de neem",
     category: "Jabones",
-    price: "$50",
+    price: "$77",
     size: "70 g",
-    ingredient: "Avena",
-    description: "Una opción de la línea XUUJÁAB indicada en el catálogo para piel normal y grasa.",
-    page: 4,
-    image: catalogPages.p04,
-  },
-  {
-    id: "tepezcohuite",
-    name: "Jabón de tepezcohuite",
-    category: "Jabones",
-    price: "$120",
-    size: "100 g",
-    ingredient: "Tepezcohuite · miel melipona",
-    description: "Barra de tepezcohuite con miel de abejas meliponas, descrita en el catálogo como parte de un ritual de cuidado artesanal.",
-    page: 5,
-    image: TEPEZCOHUITE_SOAP_URL,
-    imageAlt: "Jabón artesanal oscuro de tepezcohuite con miel de abejas meliponas.",
-    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 5",
-    isProductPhoto: true,
-  },
-  {
-    id: "miel-madera",
-    name: "Jabón de miel melipona",
-    category: "Jabones",
-    price: "$60",
-    size: "100 g",
-    ingredient: "Miel melipona · aroma madera",
-    description: "Una barra refrescante con aroma a madera, inspirada en las materias del taller y la colmena.",
-    page: 6,
-    image: HONEYCOMB_SOAP_URL,
-    imageAlt: "Jabón artesanal de miel con relieve de panal y una pequeña abeja.",
-    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 6",
-    isProductPhoto: true,
-  },
-  {
-    id: "neem",
-    name: "Jabón de neem",
-    category: "Jabones",
-    price: "$70",
-    size: "70 g",
-    ingredient: "Neem · coco",
-    description: "El catálogo propone esta fórmula de neem base coco como una opción suavizante para piel seca.",
+    ingredient: "Neem",
+    description: "Jabón artesanal de neem para complementar la higiene diaria con un ingrediente de origen botánico.",
+    benefits: ["Limpieza cotidiana de la piel", "Aroma vegetal característico", "Propuesta de cuidado inspirada en ingredientes botánicos"],
     page: 7,
     image: NEEM_HONEY_SOAP_URL,
-    imageAlt: "Jabón artesanal de neem y miel de abejas meliponas con etiqueta verde.",
-    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 7",
+    imageAlt: "Jabón artesanal de neem.",
+    imageCaption: "Foto de producto · jabón de neem · presentación de 70 g",
     isProductPhoto: true,
   },
   {
-    id: "curcuma",
-    name: "Jabón de cúrcuma",
+    id: "jabon-tepezcohuite",
+    name: "Jabón artesanal de tepezcohuite",
     category: "Jabones",
     price: "$90",
-    size: "90 g",
-    ingredient: "Cúrcuma · coco · miel melipona",
-    description: "Fórmula de cúrcuma, coco y miel de abejas meliponas. Consulta la lámina original para sus beneficios descritos.",
-    page: 8,
-    image: TURMERIC_SOAP_URL,
-    imageAlt: "Jabón artesanal de cúrcuma con etiqueta XUUMIEL.",
-    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 8",
-    isProductPhoto: true,
-    label: "Nuevo",
-  },
-  {
-    id: "fresa",
-    name: "Jabón fresa champagne",
-    category: "Jabones",
-    price: "$90",
-    size: "90 g",
-    ingredient: "Leche de cabra · fresa champagne",
-    description: "Jabón de leche de cabra y miel de abejas meliponas en la fragancia fresa champagne.",
-    page: 9,
-    image: STRAWBERRY_SOAP_URL,
-    imageAlt: "Jabón artesanal rosa de fresa champagne con etiqueta de producto.",
-    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 9",
+    size: "100 g",
+    ingredient: "Tepezcohuite",
+    description: "Jabón artesanal de tepezcohuite para una rutina de limpieza inspirada en ingredientes de tradición mexicana.",
+    benefits: ["Limpieza diaria de la piel", "Sensación de frescura después del baño", "Presentación artesanal con un ingrediente de identidad mexicana"],
+    page: 5,
+    image: TEPEZCOHUITE_SOAP_URL,
+    imageAlt: "Jabón artesanal oscuro de tepezcohuite.",
+    imageCaption: "Foto de producto · jabón de tepezcohuite · presentación de 100 g",
     isProductPhoto: true,
   },
   {
-    id: "sabila",
-    name: "Jabón de sábila menta",
+    id: "jabon-sabila-menta",
+    name: "Jabón artesanal de sábila y menta",
     category: "Jabones",
-    price: "$30",
+    price: "$50",
     size: "80 g",
     ingredient: "Sábila · menta",
-    description: "Una barra ligera y aromática que el catálogo asocia con suavidad y un perfil antioxidante.",
+    description: "Jabón artesanal de sábila y menta para una experiencia de baño con sensación fresca y ligera.",
+    benefits: ["Limpieza suave para el uso cotidiano", "Sensación refrescante por la menta", "Rutina de cuidado con ingredientes de origen vegetal"],
     page: 11,
     image: catalogPages.p11,
+    imageAlt: "Jabón artesanal de sábila y menta.",
+    imageCaption: "Lámina de producto · jabón de sábila y menta · presentación de 80 g",
   },
   {
-    id: "rch",
-    name: "Crema regeneradora RCH",
+    id: "jabon-avena",
+    name: "Jabón artesanal de avena",
+    category: "Jabones",
+    price: "$37",
+    size: "70 g",
+    ingredient: "Avena",
+    description: "Jabón artesanal de avena para una limpieza reconfortante dentro de una rutina de cuidado personal.",
+    benefits: ["Limpieza delicada de la piel", "Sensación confortable durante el baño", "Opción artesanal para una rutina de cuidado suave"],
+    page: 4,
+    image: catalogPages.p04,
+    imageAlt: "Jabón artesanal de avena.",
+    imageCaption: "Lámina de producto · jabón de avena · presentación de 70 g",
+  },
+  {
+    id: "jabon-curcuma",
+    name: "Jabón artesanal de cúrcuma",
+    category: "Jabones",
+    price: "$70",
+    size: "100 g",
+    ingredient: "Cúrcuma",
+    description: "Jabón artesanal de cúrcuma con una propuesta de cuidado inspirada en un ingrediente de uso tradicional.",
+    benefits: ["Limpieza diaria de la piel", "Aroma y color característicos del ingrediente", "Presentación artesanal para una rutina de bienestar"],
+    page: 8,
+    image: TURMERIC_SOAP_URL,
+    imageAlt: "Jabón artesanal de cúrcuma.",
+    imageCaption: "Foto de producto · jabón de cúrcuma · presentación de 100 g",
+    isProductPhoto: true,
+  },
+  {
+    id: "jabon-leche-cabra",
+    name: "Jabón artesanal de leche de cabra",
+    category: "Jabones",
+    price: "$77",
+    size: "90 g",
+    ingredient: "Leche de cabra",
+    description: "Jabón artesanal de leche de cabra con una textura cremosa para acompañar la limpieza diaria.",
+    benefits: ["Limpieza con sensación cremosa", "Rutina de cuidado confortable", "Alternativa artesanal para uso cotidiano"],
+    page: 9,
+    image: STRAWBERRY_SOAP_URL,
+    imageAlt: "Jabón artesanal de leche de cabra.",
+    imageCaption: "Foto de referencia de la línea de leche de cabra · presentación de 90 g por confirmar",
+    isProductPhoto: true,
+  },
+  {
+    id: "jabon-azul",
+    name: "Jabón artesanal azul",
+    category: "Jabones",
+    price: "$50",
+    size: "Barra · peso por confirmar",
+    ingredient: "Fórmula por confirmar",
+    description: "Jabón artesanal azul para integrar variedad y una presentación visual distintiva a la línea de cuidado personal.",
+    benefits: ["Limpieza cotidiana", "Presentación visual diferenciada", "Opción para armar combinaciones de regalo"],
+    page: null,
+    image: GALLERY_URLS.img8111,
+    imageAlt: "Jabón artesanal azul.",
+    imageCaption: "Foto de producto · jabón azul · peso e ingredientes por confirmar",
+    isProductPhoto: true,
+  },
+  {
+    id: "jabon-lavanda",
+    name: "Jabón artesanal de lavanda",
+    category: "Jabones",
+    price: "$60",
+    size: "60 g",
+    ingredient: "Lavanda",
+    description: "Jabón artesanal de lavanda para una experiencia de baño aromática y agradable.",
+    benefits: ["Limpieza diaria con aroma floral", "Sensación de relajación dentro de la rutina", "Ideal para integrar en kits de regalo"],
+    page: null,
+    image: GALLERY_URLS.img8115,
+    imageAlt: "Jabón artesanal de lavanda.",
+    imageCaption: "Foto de producto · jabón de lavanda · presentación de 60 g",
+    isProductPhoto: true,
+  },
+  {
+    id: "estuche-cedro",
+    name: "Estuche de madera recuperada de cedro",
+    category: "Kits y regalos",
+    price: "$170",
+    priceDetails: "Estuche vacío $170 · kit con 1 jabón y gotero Melipona de 10 ml $370",
+    size: "20 cm ancho × 15 cm fondo × 9 cm alto",
+    ingredient: "Madera recuperada de cedro · logotipo · grabado",
+    description: "Estuche de madera recuperada de cedro, personalizable con logotipo, destinos de Quintana Roo y grabados para bodas.",
+    benefits: ["Empaque reutilizable con identidad regional", "Personalizable para bodas y eventos", "Puede llevar nombres como Leona Vicario, Puerto Morelos, Cancún, Playa del Carmen, Cozumel o Tulum"],
+    page: null,
+    image: catalogPages.p05,
+    imageAlt: "Estuche artesanal de madera para productos de miel y cuidado personal.",
+    imageCaption: "Imagen de referencia del estuche · confirmar acabado y grabado",
+  },
+  {
+    id: "crema-chrc-m",
+    name: "CHRC M · Crema hidratante regeneradora celular",
     category: "Cremas",
     price: "desde $170",
-    size: "30 · 60 · 120 · 250 g",
-    ingredient: "Sésamo · miel melipona · colágeno",
-    description: "Crema hidratante para rostro y cuello. El catálogo describe su enfoque antioxidante, hidratante y de cuidado diario.",
+    priceDetails: "30 g $170 · 60 g $320 · 100 g en lata $590 · 240 g con dispensador $1,170",
+    size: "30 g · 60 g · 100 g en lata · 240 g con dispensador",
+    ingredient: "Fórmula CHRC M · H/M",
+    description: "Crema hidratante regeneradora celular CHRC M, disponible en presentaciones para hombre y mujer.",
+    benefits: ["Hidratación para la rutina diaria de cuidado de la piel", "Sensación de piel suave y confortable", "Varias presentaciones para diferentes necesidades de uso"],
     page: 13,
     image: RCH_CREAM_URL,
-    imageAlt: "Crema RCH regeneradora con semilla de sésamo, miel melipona y colágeno.",
-    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 13",
+    imageAlt: "Crema hidratante regeneradora celular CHRC M.",
+    imageCaption: "Foto de producto · crema CHRC M · presentaciones por confirmar en la etiqueta",
     isProductPhoto: true,
   },
   {
-    id: "rf",
-    name: "Crema reafirmante RF",
+    id: "crema-crve-r",
+    name: "CRVE R · Crema reafirmante",
     category: "Cremas",
-    price: "$280",
+    price: "$290",
     size: "50 g",
-    ingredient: "Romero · miel melipona · vitamina E",
-    description: "Crema de rostro y cuello con romero y vitamina E; el catálogo recomienda aplicarla por la noche.",
+    ingredient: "Vitamina E · romero",
+    description: "Crema reafirmante CRVE R con vitamina E y romero para complementar una rutina de cuidado personal.",
+    benefits: ["Aporta una experiencia de cuidado e hidratación", "Combina vitamina E y romero en la fórmula comunicada por la tienda", "Presentación práctica para uso personal"],
     page: 15,
     image: catalogPages.p15,
+    imageAlt: "Crema reafirmante CRVE R con vitamina E y romero.",
+    imageCaption: "Lámina de producto · crema CRVE R · presentación de 50 g",
   },
   {
-    id: "miel",
-    name: "Miel de abejas meliponas",
-    category: "Mieles y elixires",
-    price: "desde $60",
-    size: "5 · 10 · 15 · 20 · 30 · 50 ml",
-    ingredient: "Miel de Melipona beecheii",
-    description: "Presentaciones en vidrio oscuro. El catálogo reúne usos tradicionales y una referencia sobre su composición bioactiva.",
-    page: 17,
-    image: HONEY_URL,
-    imageAlt: "Frasco artesanal de miel de abejas meliponas con tapa dorada.",
-    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 17",
-    isProductPhoto: true,
+    id: "compuesto-apis-polen-propoleo",
+    name: "Compuesto de miel Apis, polen y propóleo",
+    category: "Multivitamínicos",
+    price: "$150",
+    size: "180 g",
+    ingredient: "Miel Apis · polen · propóleo",
+    description: "Compuesto de ingredientes apícolas que combina miel Apis, polen y propóleo en una presentación de 180 gramos.",
+    benefits: ["Combina tres ingredientes de la colmena", "Sabor y carácter propios de los productos apícolas", "Alternativa para una línea de bienestar de origen natural"],
+    page: null,
+    image: GALLERY_URLS.img8167,
+    imageAlt: "Compuesto de miel Apis, polen y propóleo.",
+    imageCaption: "Foto de referencia de la mezcla apícola · presentación de 180 g por cargar",
   },
   {
-    id: "cacao",
-    name: "Elixir de miel y cacao",
-    category: "Mieles y elixires",
-    price: "desde $260",
-    size: "30 · 50 ml",
-    ingredient: "Miel melipona · cacao",
-    description: "Una mezcla de miel de abejas meliponas y cacao puro presentada en envases de cristal oscuro.",
-    page: 18,
-    image: CACAO_ELIXIR_URL,
-    imageAlt: "Elixir artesanal de miel de abejas meliponas y cacao en frasco con gotero.",
-    imageCaption: "Foto de producto sin fondo · ficha catálogo 2026 · p. 18",
-    isProductPhoto: true,
-  },
-  {
-    id: "kit-cartera",
-    name: "Kit cartera",
-    category: "Kits",
+    id: "melipona-cacao-30",
+    name: "Miel Melipona Beecheii con cacao",
+    category: "Multivitamínicos",
     price: "$210",
-    size: "Edición de regalo",
-    ingredient: "Tepezcohuite · yute · miel de bolsillo",
-    description: "Incluye jabón de tepezcohuite, cartera hecha a mano en yute natural y gotero de miel de 5 ml.",
-    page: 5,
-    image: catalogPages.p05,
+    size: "30 g",
+    ingredient: "Miel Melipona Beecheii · cacao",
+    description: "Mezcla de Miel Melipona Beecheii y cacao que une el perfil floral de la miel con el carácter intenso del cacao.",
+    benefits: ["Combina dos ingredientes de identidad regional", "Sabor intenso y distintivo", "Presentación atractiva para degustación o regalo"],
+    page: null,
+    image: CACAO_ELIXIR_URL,
+    imageAlt: "Miel Melipona Beecheii con cacao.",
+    imageCaption: "Foto de referencia de miel y cacao · presentación de 30 g por cargar",
+    isProductPhoto: true,
   },
   {
-    id: "kit-flor",
-    name: "Kit flor",
-    category: "Kits",
+    id: "cacao-puro-polvo",
+    name: "Cacao puro en polvo",
+    category: "Cacao",
     price: "$90",
-    size: "Edición de regalo",
-    ingredient: "Sábila · algodón · miel de bolsillo",
-    description: "Incluye jabón de sábila, miel de bolsillo de 5 ml y una envoltura de tela de algodón.",
-    page: 11,
-    image: catalogPages.p11,
+    size: "200 g",
+    ingredient: "Cacao puro",
+    description: "Cacao puro en polvo para bebidas, repostería y preparaciones de cocina, con sabor profundo y aroma intenso.",
+    benefits: ["Versátil para bebidas y recetas", "Sabor profundo y aroma característico a cacao", "Presentación práctica para consumo en casa"],
+    page: null,
+    image: INGREDIENTS_URL,
+    imageAlt: "Cacao puro en polvo y otros ingredientes de la colección.",
+    imageCaption: "Imagen de ingredientes · foto específica del cacao en polvo por cargar",
+  },
+  {
+    id: "propoleo-eucalipto",
+    name: "Propóleo con eucalipto",
+    category: "Propóleo",
+    price: "$180",
+    size: "Presentación por confirmar",
+    ingredient: "Propóleo · eucalipto de las hojas",
+    description: "Propóleo combinado con eucalipto de las hojas, en una presentación de origen apícola y botánico.",
+    benefits: ["Aroma herbal de eucalipto", "Producto de la colmena con identidad natural", "Adecuado para una línea de bienestar tradicional"],
+    page: null,
+    image: GALLERY_URLS.img8163,
+    imageAlt: "Propóleo con eucalipto.",
+    imageCaption: "Foto de producto · propóleo con eucalipto · contenido por confirmar",
+    isProductPhoto: true,
+  },
+  {
+    id: "hidromiel-360",
+    name: "Hidromiel",
+    category: "Hidromiel",
+    price: "$110",
+    size: "360 ml · botella oscura tipo cerveza",
+    ingredient: "Miel fermentada · fórmula por confirmar",
+    description: "Hidromiel en botella oscura de 360 ml con envase tipo cerveza, pensada para degustación y regalo.",
+    benefits: ["Presentación lista para servir", "Envase oscuro con estética artesanal", "Producto distintivo para experiencias gastronómicas"],
+    page: null,
+    image: GALLERY_URLS.img8169,
+    imageAlt: "Botella oscura de hidromiel.",
+    imageCaption: "Foto de producto · hidromiel de 360 ml",
+    isProductPhoto: true,
+  },
+  {
+    id: "regalo-turistico",
+    name: "Presentación regalo turístico",
+    category: "Kits y regalos",
+    price: "$250",
+    priceDetails: "3 piezas $250 · 5 piezas $370",
+    size: "Estuche de 3 o 5 piezas",
+    ingredient: "Natural · jengibre · guanábana · piña · yaca · cacao · vainilla",
+    description: "Selección de sabores para regalo turístico, disponible en estuches de tres o cinco piezas.",
+    benefits: ["Variedad de sabores en un solo estuche", "Formato pensado para visitantes y obsequios", "Posibilidad de elegir combinaciones de sabores"],
+    page: null,
+    image: catalogPages.p05,
+    imageAlt: "Presentación de regalo turístico con productos artesanales.",
+    imageCaption: "Imagen de referencia de kit · confirmar composición de 3 y 5 piezas",
+  },
+  {
+    id: "miel-apis-750",
+    name: "Miel Apis · botella de cristal nueva",
+    category: "Miel Apis",
+    price: "$120",
+    size: "750 g",
+    ingredient: "Miel Apis",
+    description: "Miel Apis —la miel regular— en botella de cristal nueva con contenido de 750 gramos.",
+    benefits: ["Sabor tradicional de la miel Apis", "Cristal nuevo para una presentación limpia", "Tamaño familiar para consumo en casa"],
+    page: null,
+    image: HONEY_URL,
+    imageAlt: "Botella de miel de abejas.",
+    imageCaption: "Foto de referencia de miel · botella nueva de 750 g por cargar",
+  },
+  {
+    id: "miel-apis-1kg",
+    name: "Miel Apis · botella de cristal nueva",
+    category: "Miel Apis",
+    price: "$180",
+    size: "1 kg",
+    ingredient: "Miel Apis",
+    description: "Miel Apis en botella de cristal nueva con contenido de un kilogramo para consumo familiar o reventa.",
+    benefits: ["Presentación de mayor rendimiento", "Sabor tradicional de la miel regular", "Envase nuevo y listo para exhibición"],
+    page: null,
+    image: HONEY_URL,
+    imageAlt: "Botella de miel de abejas.",
+    imageCaption: "Foto de referencia de miel · botella nueva de 1 kg por cargar",
+  },
+  {
+    id: "miel-apis-reciclada-360",
+    name: "Miel Apis · botella reciclada de vino",
+    category: "Miel Apis",
+    price: "$70",
+    size: "360 g",
+    ingredient: "Miel Apis · vidrio reciclado",
+    description: "Miel Apis en botella reciclada de vino, una alternativa con carácter artesanal y aprovechamiento de envases.",
+    benefits: ["Reutilización de envases de vidrio", "Presentación artesanal y distintiva", "Tamaño práctico para regalo"],
+    page: null,
+    image: HONEY_URL,
+    imageAlt: "Botella de miel Apis en presentación artesanal.",
+    imageCaption: "Foto de referencia de miel · botella reciclada de 360 g por cargar",
+  },
+  {
+    id: "miel-apis-reciclada-700",
+    name: "Miel Apis · botella reciclada de vino",
+    category: "Miel Apis",
+    price: "$90",
+    size: "700 g",
+    ingredient: "Miel Apis · vidrio reciclado",
+    description: "Miel Apis en botella reciclada de vino con contenido de 700 gramos, pensada para una presentación sostenible.",
+    benefits: ["Aprovechamiento de vidrio reciclado", "Diseño con personalidad para anaquel", "Formato intermedio para hogar o regalo"],
+    page: null,
+    image: HONEY_URL,
+    imageAlt: "Botella de miel Apis en presentación artesanal.",
+    imageCaption: "Foto de referencia de miel · botella reciclada de 700 g por cargar",
+  },
+  {
+    id: "miel-apis-reciclada-1kg",
+    name: "Miel Apis · botella reciclada de vino",
+    category: "Miel Apis",
+    price: "$160",
+    size: "1 kg",
+    ingredient: "Miel Apis · vidrio reciclado",
+    description: "Miel Apis en botella reciclada de vino con presentación de un kilogramo.",
+    benefits: ["Mayor contenido en un envase reutilizado", "Presentación artesanal para venta o regalo", "Alternativa con enfoque de aprovechamiento de materiales"],
+    page: null,
+    image: HONEY_URL,
+    imageAlt: "Botella de miel Apis en presentación artesanal.",
+    imageCaption: "Foto de referencia de miel · botella reciclada de 1 kg por cargar",
+  },
+  {
+    id: "miel-apis-reciclada-1300",
+    name: "Miel Apis · botella reciclada de vino",
+    category: "Miel Apis",
+    price: "$200",
+    size: "1.3 kg",
+    ingredient: "Miel Apis · vidrio reciclado",
+    description: "La presentación de mayor contenido de la línea de Miel Apis en botella reciclada de vino.",
+    benefits: ["Formato familiar de alto contenido", "Envase reutilizado con identidad artesanal", "Ideal para clientes frecuentes o venta por volumen"],
+    page: null,
+    image: HONEY_URL,
+    imageAlt: "Botella grande de miel Apis en presentación artesanal.",
+    imageCaption: "Foto de referencia de miel · botella reciclada de 1.3 kg por cargar",
+  },
+  {
+    id: "estropajo-ixtle",
+    name: "Estropajo de ixtle",
+    category: "Estropajos",
+    price: "$15",
+    size: "Pieza",
+    ingredient: "Ixtle",
+    description: "Estropajo de ixtle de fibra natural para complementar rutinas de baño y cuidado personal.",
+    benefits: ["Fibra de origen natural", "Accesorio práctico para la rutina de baño", "Complemento ideal para jabones artesanales"],
+    page: null,
+    image: INGREDIENTS_URL,
+    imageAlt: "Materiales naturales de la colección artesanal.",
+    imageCaption: "Imagen de referencia · foto específica del estropajo de ixtle por cargar",
+  },
+  {
+    id: "estropajo-arbol",
+    name: "Estropajo de árbol",
+    category: "Estropajos",
+    price: "$50",
+    size: "Pieza colgante con orilla de tela",
+    ingredient: "Fibra de árbol · tela",
+    description: "Estropajo de árbol con diseño colgante y orilla de tela, pensado para acompañar productos de cuidado personal.",
+    benefits: ["Diseño colgante para facilitar el almacenamiento", "Complemento artesanal para el baño", "Puede combinarse con jabones y kits de regalo"],
+    page: null,
+    image: INGREDIENTS_URL,
+    imageAlt: "Materiales naturales de la colección artesanal.",
+    imageCaption: "Imagen de referencia · foto específica del estropajo de árbol por cargar",
   },
 ];
 
-const categories: Category[] = ["Todo", "Jabones", "Cremas", "Mieles y elixires", "Kits"];
+const categories: Category[] = [
+  "Todo",
+  "Miel Melipona",
+  "Jabones",
+  "Cremas",
+  "Multivitamínicos",
+  "Propóleo",
+  "Hidromiel",
+  "Miel Apis",
+  "Cacao",
+  "Kits y regalos",
+  "Estropajos",
+];
+
+function CategoryIcon({ category }: { category: Category }) {
+  if (category === "Jabones") return <Sparkles size={17} strokeWidth={1.8} />;
+  if (category === "Cremas") return <Flower2 size={17} strokeWidth={1.8} />;
+  if (category === "Miel Melipona" || category === "Miel Apis" || category === "Hidromiel") return <Droplets size={17} strokeWidth={1.8} />;
+  if (category === "Multivitamínicos" || category === "Propóleo" || category === "Cacao") return <Leaf size={17} strokeWidth={1.8} />;
+  if (category === "Kits y regalos") return <PackageOpen size={17} strokeWidth={1.8} />;
+  if (category === "Estropajos") return <Sparkles size={17} strokeWidth={1.8} />;
+  return <Hexagon size={17} strokeWidth={1.8} />;
+}
+
 const galleryCollections = [
   "Todas",
   "Jabones artesanales",
@@ -345,14 +661,6 @@ const catalogPhotos: CatalogPhoto[] = [
   { id: "neem-honey-soap", name: "Jabón de neem y miel", category: "Jabones artesanales", image: GALLERY_URLS.neemHoneySoap, alt: "Jabón artesanal de neem y miel", note: "Producto identificado" },
 ];
 
-function CategoryIcon({ category }: { category: Category }) {
-  if (category === "Jabones") return <Sparkles size={17} strokeWidth={1.8} />;
-  if (category === "Cremas") return <Flower2 size={17} strokeWidth={1.8} />;
-  if (category === "Mieles y elixires") return <Droplets size={17} strokeWidth={1.8} />;
-  if (category === "Kits") return <PackageOpen size={17} strokeWidth={1.8} />;
-  return <Hexagon size={17} strokeWidth={1.8} />;
-}
-
 function GalleryCollectionIcon({ collection }: { collection: GalleryCollection }) {
   if (collection === "Jabones artesanales") return <Sparkles size={17} strokeWidth={1.8} />;
   if (collection === "Cuidado facial y corporal") return <Flower2 size={17} strokeWidth={1.8} />;
@@ -374,7 +682,7 @@ function ProductCard({ product, onOpen }: { product: Product; onOpen: (product: 
       <div className={`product-visual ${product.isProductPhoto ? "is-product-photo" : ""}`}>
         <img src={product.image} alt={product.imageAlt ?? `Lámina del catálogo para ${product.name}`} />
         <div className="product-image-tint" />
-        <span className="page-chip">p. {product.page}</span>
+        {product.page && <span className="page-chip">p. {product.page}</span>}
         {product.label && <span className="new-chip">{product.label}</span>}
         <span className="view-chip">Ver ficha <ArrowUpRight size={14} /></span>
       </div>
@@ -427,7 +735,7 @@ export default function Home() {
         </nav>
 
         <a className="header-catalog-link" href={PDF_URL} target="_blank" rel="noreferrer">
-          Ver PDF <ArrowUpRight size={16} />
+          Ver catálogo visual <ArrowUpRight size={16} />
         </a>
         <button
           type="button"
@@ -445,7 +753,7 @@ export default function Home() {
             <a href="#catalogo" onClick={() => setMobileMenuOpen(false)}>Colecciones</a>
             <a href="#galeria" onClick={() => setMobileMenuOpen(false)}>Galería</a>
             <a href="#ritual" onClick={() => setMobileMenuOpen(false)}>Rituales</a>
-            <a href={PDF_URL} target="_blank" rel="noreferrer" onClick={() => setMobileMenuOpen(false)}>Abrir PDF</a>
+            <a href={PDF_URL} target="_blank" rel="noreferrer" onClick={() => setMobileMenuOpen(false)}>Abrir catálogo visual</a>
           </nav>
         )}
       </header>
@@ -464,8 +772,8 @@ export default function Home() {
               <a className="text-action" href="#origen">Conocer el origen <ChevronRight size={17} /></a>
             </div>
             <div className="hero-footnotes">
-              <span><b>4</b> líneas de cuidado</span>
-              <span><b>14</b> fórmulas y kits</span>
+              <span><b>{categories.length - 1}</b> categorías</span>
+              <span><b>{products.length}</b> productos</span>
               <span><b>100%</b> inspiración local</span>
             </div>
           </div>
@@ -601,12 +909,12 @@ export default function Home() {
           <p className="eyebrow dark"><PackageOpen size={16} /> Ediciones preparadas</p>
           <h2 id="kits-title">Regalos hechos para quedarse.</h2>
           <p>Dos combinaciones del catálogo integran miel de bolsillo, texturas artesanales y fórmulas de la línea XUUJÁAB.</p>
-          <button type="button" className="text-action dark-action" onClick={() => setSelectedCategory("Kits")}>
+          <button type="button" className="text-action dark-action" onClick={() => setSelectedCategory("Kits y regalos")}>
             Ver kits <ChevronRight size={17} />
           </button>
         </div>
         <div className="kit-cards">
-          {products.filter((product) => product.category === "Kits").map((kit, index) => (
+          {products.filter((product) => product.category === "Kits y regalos").map((kit, index) => (
             <button type="button" className="kit-card" key={kit.id} onClick={() => setSelectedProduct(kit)}>
               <div className="kit-number">0{index + 1}</div>
               <div className="kit-preview"><img src={kit.image} alt={`Lámina del catálogo para ${kit.name}`} /></div>
@@ -623,9 +931,9 @@ export default function Home() {
           <div className="pdf-symbol" aria-hidden="true"><BookOpen size={29} /></div>
           <p className="eyebrow">Archivo de origen</p>
           <h2 id="pdf-title">Catálogo XUUMIEL<br /><em>2026</em></h2>
-          <p>Consulta las 26 páginas de la edición compartida, con descripciones y presentaciones completas de Mieles de Quintana Roo México.</p>
+          <p>Consulta las láminas visuales de la edición compartida. Para precios, tamaños y fichas vigentes, toma como fuente principal el catálogo web actualizado.</p>
           <a className="primary-action pdf-action" href={PDF_URL} target="_blank" rel="noreferrer">
-            Abrir catálogo completo <ArrowUpRight size={17} />
+            Abrir catálogo visual <ArrowUpRight size={17} />
           </a>
         </div>
         <div className="pdf-stack" aria-hidden="true">
@@ -643,7 +951,7 @@ export default function Home() {
           <img src={EMBLEM_URL} alt="Logotipo original XUUMIEL con pirámides" />
           <div><small>Mieles de Quintana Roo México</small></div>
         </div>
-        <p>Catálogo promocional elaborado a partir de la edición 2026 proporcionada. Los usos y beneficios se muestran como referencias de la fuente original.</p>
+        <p>Catálogo web actualizado con los precios y presentaciones comunicados por la tienda. El PDF enlazado conserva la edición visual original y funciona como referencia de imágenes.</p>
         <div className="footer-links">
           <a href="#inicio">Volver arriba</a>
           <a href={PDF_URL} target="_blank" rel="noreferrer">Abrir PDF</a>
@@ -665,11 +973,19 @@ export default function Home() {
               </DialogHeader>
               <dl className="product-specs">
                 <div><dt>Presentación</dt><dd>{selectedProduct.size}</dd></div>
-                <div><dt>Precio</dt><dd>{selectedProduct.price} MXN</dd></div>
+                <div><dt>Precio</dt><dd>{selectedProduct.price} MXN{selectedProduct.priceDetails && <><br /><small>{selectedProduct.priceDetails}</small></>}</dd></div>
                 <div><dt>Mezcla destacada</dt><dd>{selectedProduct.ingredient}</dd></div>
               </dl>
+              {selectedProduct.benefits && selectedProduct.benefits.length > 0 && (
+                <div className="product-benefits">
+                  <p className="product-benefits-title">Beneficios y atributos</p>
+                  <ul>
+                    {selectedProduct.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}
+                  </ul>
+                </div>
+              )}
               <a className="product-source-link" href={PDF_URL} target="_blank" rel="noreferrer">
-                Abrir catálogo completo <ArrowUpRight size={16} />
+                Abrir catálogo visual <ArrowUpRight size={16} />
               </a>
             </div>
           </DialogContent>
