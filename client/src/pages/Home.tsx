@@ -729,6 +729,7 @@ export default function Home() {
         <nav className="desktop-nav" aria-label="Navegación principal">
           <a href="#origen">Conservación</a>
           <a href="#historia-cultura">Historia y cultura</a>
+          <a href="#proyectos">Proyectos</a>
           <a href="#catalogo">Colecciones</a>
           <a href="#galeria">Galería</a>
           <a href="#ritual">Rituales</a>
@@ -752,6 +753,7 @@ export default function Home() {
           <nav id="mobile-navigation" className="mobile-nav" aria-label="Navegación móvil">
             <a href="#origen" onClick={() => setMobileMenuOpen(false)}>Conservación</a>
             <a href="#historia-cultura" onClick={() => setMobileMenuOpen(false)}>Historia y cultura</a>
+            <a href="#proyectos" onClick={() => setMobileMenuOpen(false)}>Proyectos</a>
             <a href="#catalogo" onClick={() => setMobileMenuOpen(false)}>Colecciones</a>
             <a href="#galeria" onClick={() => setMobileMenuOpen(false)}>Galería</a>
             <a href="#ritual" onClick={() => setMobileMenuOpen(false)}>Rituales</a>
@@ -857,6 +859,29 @@ export default function Home() {
             <strong>Conservar es reproducir, educar y proteger.</strong>
             <p>El catálogo y sus productos son una puerta de entrada a esta misión; el objetivo permanece en la especie nativa, su hábitat y las personas que la cuidan.</p>
           </div>
+        </div>
+      </section>
+
+      <section id="proyectos" className="projects-section" aria-labelledby="projects-title">
+        <div className="projects-heading">
+          <div>
+            <p className="eyebrow"><Sparkles size={16} /> Proyectos en marcha</p>
+            <h2 id="projects-title">La conservación ya está en movimiento.</h2>
+          </div>
+          <p>Después de la historia y la cultura vienen las acciones que ya estamos impulsando para proteger a la abeja nativa <i>Melipona beecheii</i> y sumar a más personas a esta ruta.</p>
+        </div>
+        <div className="projects-grid">
+          <article className="project-card">
+            <div className="project-card-top"><span>01</span><b>En proceso</b></div>
+            <h3>Lograr un santuario de abejas nativas <i>Melipona beecheii</i>.</h3>
+            <p>Trabajamos para hacer realidad un espacio dedicado a la conservación, reproducción y protección de estas abejas nativas, junto con el monte que sostiene su vida.</p>
+          </article>
+          <article className="project-card project-card-highlight">
+            <div className="project-card-top"><span>02</span><b>Comunidad activa</b></div>
+            <h3>Forma parte de la comunidad de abejer@s de <i>Melipona beecheii</i>.</h3>
+            <p>La comunidad ya está funcionando. Contáctanos para agendar una cita y recibir los detalles para conocer, aprender y participar en el cuidado de la melipona.</p>
+            <a className="project-contact-link" href="mailto:info@xuumiel.com?subject=Comunidad%20de%20abejer%40s%20Melipona%20beecheii">Agendar una cita <ArrowUpRight size={16} /></a>
+          </article>
         </div>
       </section>
 
