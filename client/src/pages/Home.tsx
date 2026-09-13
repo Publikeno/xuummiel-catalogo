@@ -72,6 +72,12 @@ const RCH_CREAM_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/sABTLISpVCTBrjSM.png";
 const HONEY_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/VkEKfdnqSiaFipIM.png";
+const GOTERO_10ML_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LMWyKSbOJwzOWaUp.png";
+const GOTERO_20ML_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/BIDPsgwLjJQjYNVF.png";
+const GOTERO_30ML_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/ZbXYjPhzdELQdpGT.png";
 const CACAO_ELIXIR_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/WhPQiQqlRzAaajOP.png";
 const GALLERY_URLS = {
@@ -232,8 +238,8 @@ const products: Product[] = [
       "Producto de Quintana Roo que apoya la conservación de las abejas nativas",
     ],
     page: 17,
-    image: HONEY_URL,
-    imageAlt: "Gotero de miel de abejas meliponas Beecheii.",
+    image: GOTERO_10ML_URL,
+    imageAlt: "Gotero de miel Melipona Beecheii de 10 ml, sin fondo.",
     imageCaption:
       "Miel Melipona Beecheii en presentación gotero · precio vigente comunicado por la tienda",
   },
@@ -252,8 +258,8 @@ const products: Product[] = [
       "Alternativa regional para degustar y compartir",
     ],
     page: 17,
-    image: HONEY_URL,
-    imageAlt: "Gotero de miel de abejas meliponas Beecheii.",
+    image: GOTERO_20ML_URL,
+    imageAlt: "Gotero de miel Melipona Beecheii de 20 ml, sin fondo.",
     imageCaption:
       "Miel Melipona Beecheii en presentación gotero · precio vigente comunicado por la tienda",
   },
@@ -272,8 +278,8 @@ const products: Product[] = [
       "Tamaño práctico para regalo o consumo personal",
     ],
     page: 17,
-    image: HONEY_URL,
-    imageAlt: "Frasco de miel de abejas meliponas en cristal oscuro.",
+    image: GOTERO_30ML_URL,
+    imageAlt: "Gotero de miel Melipona Beecheii de 30 ml, sin fondo.",
     imageCaption:
       "Presentación de 30 ml · frasco redondo o cuadrado · precio vigente comunicado por la tienda",
   },
