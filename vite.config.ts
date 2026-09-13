@@ -207,7 +207,9 @@ const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(
 
 export default defineConfig({
   plugins,
-  base: process.env.GITHUB_ACTIONS ? "/xuummiel-catalogo/" : "/",
+  // The production site uses the custom domain xuumiel.com at the root path.
+  // A repository subpath would make GitHub Pages return 404 for JS and CSS assets.
+  base: "/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
