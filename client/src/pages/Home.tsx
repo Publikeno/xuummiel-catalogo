@@ -12,6 +12,7 @@ import {
   Flower2,
   Hexagon,
   Leaf,
+  MessageCircle,
   Menu,
   PackageOpen,
   Sparkles,
@@ -37,6 +38,8 @@ const PDF_URL = portableAsset(
   "/manus-storage/CATALOGOXUUMIELYXUUJABABRIL2026actual08_73d4e109.pdf",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/dNquuCIXxNBVwIFX.pdf"
 );
+const WHATSAPP_URL =
+  "https://wa.me/529984070222?text=Hola%20XUUMIEL%2C%20quiero%20hacer%20un%20pedido.%20%C2%BFMe%20comparten%20disponibilidad%20y%20formas%20de%20pago%3F";
 const EMBLEM_URL = portableAsset(
   "/manus-storage/logo-003_9c254216.png",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/HIVsFmCyefRWqBvl.png"
@@ -1266,6 +1269,15 @@ export default function Home() {
               >
                 Explorar colecciones <ArrowDown size={17} />
               </button>
+              <a
+                className="whatsapp-action"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Hacer un pedido por WhatsApp"
+              >
+                <MessageCircle size={17} /> Pedir por WhatsApp
+              </a>
               <a className="text-action" href="#origen">
                 Conocer la misión <ChevronRight size={17} />
               </a>
