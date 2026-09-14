@@ -724,6 +724,7 @@ export default function Home() {
       <header className="site-header">
         <a href="#inicio" className="brand-lockup" aria-label="XUUMIEL, inicio">
           <img className="brand-emblem" src={EMBLEM_URL} alt="Logotipo original XUUMIEL con pirámides" />
+          <span className="brand-route">La Ruta de la Miel</span>
         </a>
 
         <nav className="desktop-nav" aria-label="Navegación principal">

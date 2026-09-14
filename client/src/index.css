@@ -105,9 +105,10 @@ button:not(:disabled), [role="button"]:not([aria-disabled="true"]), a[href] { cu
 .skip-link:focus { transform: translateY(0); }
 .page-shell { overflow: hidden; }
 
-.site-header { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 80px; padding: 0.75rem clamp(1.25rem, 4vw, 4rem); background: rgb(247 240 223 / 94%); border-bottom: 1px solid rgb(88 54 40 / 12%); backdrop-filter: blur(14px); }
-.brand-lockup { display: flex; align-items: center; text-decoration: none; color: var(--cacao); }
-.brand-emblem { width: 103px; height: 62px; object-fit: contain; }
+.site-header { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 196px; padding: 0.75rem clamp(1.25rem, 4vw, 4rem); background: rgb(247 240 223 / 94%); border-bottom: 1px solid rgb(88 54 40 / 12%); backdrop-filter: blur(14px); }
+.brand-lockup { display: flex; align-items: center; gap: 1.15rem; min-width: 0; text-decoration: none; color: var(--cacao); }
+.brand-emblem { width: 309px; height: 186px; object-fit: contain; }
+.brand-route { max-width: 150px; color: var(--amber); font-family: "DM Serif Display", Georgia, serif; font-size: 1.18rem; letter-spacing: -0.02em; line-height: 0.98; }
 .brand-name { font-family: "DM Serif Display", Georgia, serif; font-size: 1.36rem; letter-spacing: 0.045em; line-height: 1; }
 .brand-subline { margin-top: 0.19rem; color: var(--bark); font-size: 0.56rem; font-weight: 800; letter-spacing: 0.105em; text-transform: uppercase; }
 .desktop-nav { display: flex; align-items: center; gap: clamp(1rem, 2.3vw, 2.6rem); margin-left: auto; }
@@ -339,6 +340,11 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
 .product-source-link:hover { color: var(--cacao); }
 
 @media (max-width: 1020px) {
+  .site-header { min-height: 160px; }
+  .brand-emblem { width: 240px; height: 145px; }
+  .brand-route { max-width: 120px; font-size: 0.98rem; }
+  .desktop-nav { gap: 0.75rem; }
+  .desktop-nav a, .header-catalog-link { font-size: 0.61rem; }
   .hero-layout { grid-template-columns: minmax(0, 1.15fr) minmax(290px, 0.85fr); }
   .hero-copy h1 { font-size: clamp(3.2rem, 6vw, 5.5rem); }
   .hero-scene { min-height: 450px; margin-left: -2rem; }
@@ -350,8 +356,10 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
 }
 
 @media (max-width: 760px) {
-  .site-header { min-height: 69px; padding: 0.55rem 1rem; }
-  .brand-emblem { width: 84px; height: 52px; }
+  .site-header { min-height: 124px; padding: 0.35rem 1rem; }
+  .brand-lockup { gap: 0.6rem; }
+  .brand-emblem { width: 190px; height: 115px; }
+  .brand-route { max-width: 92px; font-size: 0.82rem; }
   .desktop-nav, .header-catalog-link { display: none; }
   .mobile-menu-trigger { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgb(88 54 40 / 34%); background: transparent; color: var(--cacao); }
   .mobile-nav { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: grid; padding: 0.85rem 1rem 1rem; background: var(--paper); border-bottom: 1px solid rgb(88 54 40 / 18%); box-shadow: 0 12px 18px rgb(46 27 20 / 9%); transform-origin: top right; animation: menu-in 180ms var(--ease-out); }
