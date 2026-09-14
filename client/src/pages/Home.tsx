@@ -1082,10 +1082,6 @@ function GalleryCollectionIcon({
     return <Sparkles size={17} strokeWidth={1.8} />;
   if (collection === "Cuidado facial y corporal")
     return <Flower2 size={17} strokeWidth={1.8} />;
-  if (collection === "Cuidado capilar")
-    return <Leaf size={17} strokeWidth={1.8} />;
-  if (collection === "Protección natural")
-    return <Hexagon size={17} strokeWidth={1.8} />;
   if (collection === "Mieles y elixires")
     return <Droplets size={17} strokeWidth={1.8} />;
   if (collection === "Kits y regalos")
