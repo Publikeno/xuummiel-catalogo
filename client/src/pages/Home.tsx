@@ -58,6 +58,8 @@ const ORIGIN_URL = portableAsset(
 );
 const ARROZ_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/pDRRCxLqHbEchDKn.png";
+const SABILA_MENTA_SOAP_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/zRivaShqPnxVMNue.png";
 const TEPEZCOHUITE_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/MsOZTjFDNADwnXdY.png";
 const HONEYCOMB_SOAP_URL =
@@ -427,10 +429,10 @@ const products: Product[] = [
       "Ingredientes de origen vegetal para una rutina ligera",
     ],
     page: 11,
-    image: catalogPages.p11,
-    imageAlt: "Jabón artesanal de sábila y menta.",
+    image: SABILA_MENTA_SOAP_URL,
+    imageAlt: "Jabón artesanal individual de sábila y menta.",
     imageCaption:
-      "Lámina del catálogo · jabón de sábila y menta · presentación de 80 g",
+      "Foto de producto · jabón individual de sábila y menta · presentación de 80 g",
   },
   {
     id: "jabon-avena",
