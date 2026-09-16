@@ -57,7 +57,7 @@ const ORIGIN_URL = portableAsset(
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FxmqVvkyJSaIQvwZ.jpg"
 );
 const ARROZ_SOAP_URL =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/vKdMIpvKquFkJYTN.png";
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/pDRRCxLqHbEchDKn.png";
 const TEPEZCOHUITE_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/MsOZTjFDNADwnXdY.png";
 const HONEYCOMB_SOAP_URL =
