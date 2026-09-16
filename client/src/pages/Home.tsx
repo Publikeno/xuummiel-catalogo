@@ -2,7 +2,7 @@
  * Diseño: Taller de Miel — editorial artesanal contemporáneo.
  * Principios del archivo: materias orgánicas, datos de producto claros, composición asimétrica y exploración tranquila.
  */
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -72,6 +72,8 @@ const RCH_CREAM_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/sABTLISpVCTBrjSM.png";
 const HONEY_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/VkEKfdnqSiaFipIM.png";
+const MELIPONA_50ML_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/zMRpWUTxcczdWsoU.png";
 const GOTERO_10ML_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LMWyKSbOJwzOWaUp.png";
 const GOTERO_20ML_URL =
@@ -298,7 +300,7 @@ const products: Product[] = [
       "Formato especial para regalo turístico",
     ],
     page: 17,
-    image: HONEY_URL,
+    image: MELIPONA_50ML_URL,
     imageAlt: "Frasco cuadrado de miel de abejas meliponas.",
     imageCaption:
       "Presentación de 50 ml en cristal oscuro · precio vigente comunicado por la tienda",
@@ -1089,6 +1091,144 @@ function GalleryCollectionIcon({
   return <Hexagon size={17} strokeWidth={1.8} />;
 }
 
+type ProductImageViewerProps = {
+  product: Product;
+};
+
+type PointerPosition = {
+  x: number;
+  y: number;
+};
+
+const clampZoom = (value: number) => Math.min(4, Math.max(1, value));
+
+function ProductImageViewer({ product }: ProductImageViewerProps) {
+  const [transform, setTransform] = useState({ scale: 1, x: 0, y: 0 });
+  const pointers = useRef(new Map<number, PointerPosition>());
+  const dragStart = useRef<{
+    x: number;
+    y: number;
+    offsetX: number;
+    offsetY: number;
+  } | null>(null);
+  const pinchStart = useRef<{ distance: number; scale: number } | null>(null);
+
+  const resetView = () => setTransform({ scale: 1, x: 0, y: 0 });
+  const distanceBetween = (points: PointerPosition[]) => {
+    const [first, second] = points;
+    return Math.hypot(second.x - first.x, second.y - first.y);
+  };
+
+  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    event.currentTarget.setPointerCapture(event.pointerId);
+    pointers.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+
+    if (pointers.current.size === 1) {
+      dragStart.current = {
+        x: event.clientX,
+        y: event.clientY,
+        offsetX: transform.x,
+        offsetY: transform.y,
+      };
+    } else if (pointers.current.size === 2) {
+      pinchStart.current = {
+        distance: distanceBetween(Array.from(pointers.current.values())),
+        scale: transform.scale,
+      };
+      dragStart.current = null;
+    }
+  };
+
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!pointers.current.has(event.pointerId)) return;
+    pointers.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+
+    if (pointers.current.size >= 2 && pinchStart.current) {
+      const distance = distanceBetween(Array.from(pointers.current.values()));
+      const scale = clampZoom(
+        pinchStart.current.scale * (distance / pinchStart.current.distance),
+      );
+      setTransform(current => ({ ...current, scale }));
+      return;
+    }
+
+    if (pointers.current.size === 1 && dragStart.current && transform.scale > 1) {
+      setTransform(current => ({
+        ...current,
+        x: dragStart.current!.offsetX + event.clientX - dragStart.current!.x,
+        y: dragStart.current!.offsetY + event.clientY - dragStart.current!.y,
+      }));
+    }
+  };
+
+  const handlePointerEnd = (event: React.PointerEvent<HTMLDivElement>) => {
+    pointers.current.delete(event.pointerId);
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+
+    if (pointers.current.size < 2) pinchStart.current = null;
+    if (pointers.current.size === 1) {
+      const remaining = Array.from(pointers.current.values())[0];
+      dragStart.current = {
+        x: remaining.x,
+        y: remaining.y,
+        offsetX: transform.x,
+        offsetY: transform.y,
+      };
+    } else {
+      dragStart.current = null;
+    }
+  };
+
+  const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setTransform(current => ({
+      ...current,
+      scale: clampZoom(current.scale - event.deltaY * 0.001),
+    }));
+  };
+
+  return (
+    <div
+      className={`product-dialog-visual ${product.isProductPhoto ? "is-product-photo" : ""}`}
+      onDoubleClick={() =>
+        setTransform(current =>
+          current.scale > 1 ? { scale: 1, x: 0, y: 0 } : { ...current, scale: 2 },
+        )
+      }
+      onPointerCancel={handlePointerEnd}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerEnd}
+      onWheel={handleWheel}
+    >
+      <img
+        className="product-dialog-image"
+        src={product.image}
+        alt={product.imageAlt ?? `Imagen del catálogo para ${product.name}`}
+        draggable="false"
+        style={{
+          transform: `translate3d(${transform.x}px, ${transform.y}px, 0) scale(${transform.scale})`,
+        }}
+      />
+      <button
+        type="button"
+        className="image-viewer-reset"
+        onClick={resetView}
+        onPointerDown={event => event.stopPropagation()}
+        aria-label="Restablecer tamaño y posición de la imagen"
+      >
+        Restablecer vista
+      </button>
+      <span className="image-viewer-hint">Pellizca o arrastra para explorar</span>
+      <span className="product-dialog-caption">
+        {product.imageCaption ?? `Fuente: catálogo 2026 · p. ${product.page}`}
+      </span>
+    </div>
+  );
+}
+
 function ProductCard({
   product,
   onOpen,
@@ -1524,7 +1664,7 @@ export default function Home() {
           </div>
           <p>
             Selecciona una categoría para recorrer las fórmulas y abrir su ficha
-            con datos, precio y lámina del catálogo original.
+            con datos, precio e imagen del catálogo original.
           </p>
         </div>
 
@@ -1821,21 +1961,7 @@ export default function Home() {
       >
         {selectedProduct && (
           <DialogContent className="product-dialog">
-            <div
-              className={`product-dialog-visual ${selectedProduct.isProductPhoto ? "is-product-photo" : ""}`}
-            >
-              <img
-                src={selectedProduct.image}
-                alt={
-                  selectedProduct.imageAlt ??
-                  `Lámina del catálogo para ${selectedProduct.name}`
-                }
-              />
-              <span>
-                {selectedProduct.imageCaption ??
-                  `Fuente: catálogo 2026 · p. ${selectedProduct.page}`}
-              </span>
-            </div>
+            <ProductImageViewer product={selectedProduct} />
             <div className="product-dialog-copy">
               <DialogHeader>
                 <p className="eyebrow dark">

@@ -318,13 +318,17 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
 .footer-links a { color: #e7bc62; font-size: 0.61rem; }
 
 .product-dialog { display: grid !important; grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1fr); max-width: min(900px, calc(100% - 2rem)) !important; max-height: min(680px, calc(100vh - 2rem)); overflow: hidden; padding: 0 !important; border: 1px solid rgb(88 54 40 / 36%) !important; border-radius: 0 !important; background: #fcf8ee !important; color: var(--cacao); }
-.product-dialog-visual { position: relative; min-height: 430px; overflow: auto; background: var(--wax); touch-action: pinch-zoom; }
-.product-dialog-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgb(46 27 20 / 68%), transparent 40%); }
-.product-dialog-visual img { display: block; width: 100%; min-width: 100%; height: 100%; min-height: 100%; object-fit: cover; filter: saturate(0.8); touch-action: pinch-zoom; }
+.product-dialog-visual { position: relative; min-height: 430px; overflow: hidden; background: var(--wax); cursor: grab; touch-action: none; user-select: none; }
+.product-dialog-visual:active { cursor: grabbing; }
+.product-dialog-visual::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, rgb(46 27 20 / 68%), transparent 40%); }
+.product-dialog-visual img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.8); pointer-events: none; user-select: none; will-change: transform; }
 .product-dialog-visual.is-product-photo { background: radial-gradient(circle at 50% 43%, #fffdf7 0 21%, #f1e2be 73%); }
 .product-dialog-visual.is-product-photo::after { background: linear-gradient(to top, rgb(46 27 20 / 16%), transparent 60%); }
-.product-dialog-visual.is-product-photo img { object-fit: contain; filter: saturate(1) contrast(1.02); transform: scale(1.16); transform-origin: center; }
-.product-dialog-visual span { position: absolute; z-index: 1; right: 1rem; bottom: 1rem; left: 1rem; color: #fffaf0; font-size: 0.55rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; }
+.product-dialog-visual.is-product-photo img { object-fit: contain; filter: saturate(1) contrast(1.02); transform-origin: center; }
+.product-dialog-caption { position: absolute; z-index: 2; right: 1rem; bottom: 1rem; left: 1rem; color: #fffaf0; font-size: 0.55rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; }
+.image-viewer-hint { position: absolute; z-index: 2; top: 1rem; left: 1rem; padding: 0.42rem 0.55rem; background: rgb(46 27 20 / 68%); color: #fffaf0; font-size: 0.52rem; font-weight: 800; letter-spacing: 0.05em; pointer-events: none; text-transform: uppercase; }
+.image-viewer-reset { position: absolute; z-index: 3; top: 1rem; right: 1rem; border: 1px solid rgb(255 250 240 / 72%); padding: 0.45rem 0.58rem; background: rgb(46 27 20 / 72%); color: #fffaf0; cursor: pointer; font-size: 0.52rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; touch-action: manipulation; }
+.image-viewer-reset:hover { background: var(--amber); color: var(--cacao); }
 .product-dialog-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 4vw, 3.4rem); overflow-y: auto; }
 .product-dialog-copy [data-slot="dialog-title"] { padding-right: 1rem; color: var(--cacao); font-family: "DM Serif Display", Georgia, serif; font-size: clamp(2rem, 3vw, 3rem); font-weight: 400; letter-spacing: -0.035em; line-height: 0.98; }
 .product-dialog-copy [data-slot="dialog-description"] { margin-top: 0.25rem; color: #735747; font-size: 0.8rem; line-height: 1.66; }
