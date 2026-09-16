@@ -565,23 +565,21 @@ const products: Product[] = [
     id: "crema-chrc-m",
     name: "CHRC M · Crema hidratante regeneradora celular",
     category: "Cremas",
-    price: "desde $170",
-    priceDetails:
-      "30 g $170 · 60 g $320 · 100 g en lata $590 · 240 g con dispensador $1,170",
-    size: "30 g · 60 g · 100 g en lata · 240 g con dispensador",
+    price: "$320",
+    size: "60 g con dispensador",
     ingredient: "Semilla de sésamo · miel Melipona Beecheii (sin aguijón) · colágeno",
     description:
       "Crema hidratante regeneradora celular para rostro y cuello, formulada con semilla de sésamo, miel Melipona y colágeno.",
     benefits: [
       "Aporta hidratación y sensación de suavidad",
       "Acompaña una rutina diaria de cuidado de rostro y cuello",
-      "Varias presentaciones para elegir según el uso y la ocasión",
+      "Presentación con dispensador para facilitar su aplicación",
     ],
     page: 13,
     image: RCH_CREAM_URL,
     imageAlt: "Crema hidratante regeneradora celular CHRC M.",
     imageCaption:
-      "Foto de producto · crema CHRC M · presentaciones y precios vigentes comunicados por la tienda",
+      "Foto de producto · crema CHRC M · presentación de 60 g con dispensador",
     isProductPhoto: true,
   },
   {
