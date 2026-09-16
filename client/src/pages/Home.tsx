@@ -604,23 +604,23 @@ const products: Product[] = [
   },
   {
     id: "compuesto-apis-polen-propoleo",
-    name: "Compuesto de miel Apis, polen y propóleo",
+    name: "Cacao puro en polvo",
     category: "Multivitamínicos",
-    price: "$150",
-    size: "180 g",
-    ingredient: "Miel Apis · polen · propóleo",
+    price: "$38",
+    size: "100 g",
+    ingredient: "Cacao puro en polvo",
     description:
-      "Mezcla apícola que reúne miel Apis, polen y propóleo en una presentación de 180 gramos.",
+      "Cacao puro en polvo para bebidas, repostería y preparaciones de cocina, con sabor profundo y aroma intenso.",
     benefits: [
-      "Combina tres ingredientes de la colmena",
-      "Aporta el carácter y sabor de una mezcla apícola",
-      "Alternativa tradicional para integrar a una despensa de bienestar",
+      "Versátil para bebidas y recetas",
+      "Sabor profundo y aroma característico",
+      "Presentación práctica para consumo en casa",
     ],
     page: 19,
     image: GALLERY_URLS.img8167,
-    imageAlt: "Compuesto de miel Apis, polen y propóleo.",
+    imageAlt: "Cacao puro en polvo en presentación de 100 g.",
     imageCaption:
-      "Foto de producto · mezcla de miel, polen y propóleo · presentación de 180 g",
+      "Foto de producto · cacao puro en polvo · presentación de 100 g",
     isProductPhoto: true,
   },
   {
