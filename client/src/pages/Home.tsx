@@ -225,13 +225,13 @@ const catalogPages = {
 const products: Product[] = [
   {
     id: "melipona-10",
-    name: "Miel Melipona Beecheii · gotero de 10 ml",
+    name: "Miel Melipona Beecheii (sin aguijón) · gotero de 10 ml",
     category: "Miel Melipona",
     price: "$130",
     size: "10 ml",
-    ingredient: "Miel Melipona Beecheii",
+    ingredient: "Miel Melipona Beecheii (sin aguijón)",
     description:
-      "Miel Melipona Beecheii en gotero de 10 ml, una presentación pequeña para conocer su sabor floral y llevar un producto de origen regional.",
+      "Miel Melipona Beecheii (sin aguijón) en gotero de 10 ml, una presentación pequeña para conocer su sabor floral y llevar un producto de origen regional.",
     benefits: [
       "Sabor y aroma característicos de la miel Melipona",
       "Formato práctico para degustación, regalo o consumo personal",
@@ -239,19 +239,19 @@ const products: Product[] = [
     ],
     page: 17,
     image: GOTERO_30ML_URL,
-    imageAlt: "Frasco pequeño de miel Melipona Beecheii para la presentación de 10 ml.",
+    imageAlt: "Frasco pequeño de miel Melipona Beecheii (sin aguijón) para la presentación de 10 ml.",
     imageCaption:
-      "Miel Melipona Beecheii en presentación gotero · precio vigente comunicado por la tienda",
+      "Miel Melipona Beecheii (sin aguijón) en presentación gotero · precio vigente comunicado por la tienda",
   },
   {
     id: "melipona-20",
-    name: "Miel Melipona Beecheii · gotero de 20 ml",
+    name: "Miel Melipona Beecheii (sin aguijón) · gotero de 20 ml",
     category: "Miel Melipona",
     price: "$230",
     size: "20 ml",
-    ingredient: "Miel Melipona Beecheii",
+    ingredient: "Miel Melipona Beecheii (sin aguijón)",
     description:
-      "Miel Melipona Beecheii en una presentación intermedia de 20 ml para consumo personal o regalo turístico.",
+      "Miel Melipona Beecheii (sin aguijón) en una presentación intermedia de 20 ml para consumo personal o regalo turístico.",
     benefits: [
       "Perfil floral y distintivo de la miel Melipona",
       "Presentación fácil de transportar",
@@ -259,19 +259,19 @@ const products: Product[] = [
     ],
     page: 17,
     image: GOTERO_20ML_URL,
-    imageAlt: "Gotero de miel Melipona Beecheii de 20 ml, sin fondo.",
+    imageAlt: "Gotero de miel Melipona Beecheii (sin aguijón) de 20 ml, sin fondo.",
     imageCaption:
-      "Miel Melipona Beecheii en presentación gotero · precio vigente comunicado por la tienda",
+      "Miel Melipona Beecheii (sin aguijón) en presentación gotero · precio vigente comunicado por la tienda",
   },
   {
     id: "melipona-30",
-    name: "Miel Melipona Beecheii · gotero de 30 ml",
+    name: "Miel Melipona Beecheii (sin aguijón) · gotero de 30 ml",
     category: "Miel Melipona",
     price: "$320",
     size: "30 ml · frasco de cristal oscuro redondo o cuadrado",
-    ingredient: "Miel Melipona Beecheii · cristal oscuro",
+    ingredient: "Miel Melipona Beecheii (sin aguijón) · cristal oscuro",
     description:
-      "Miel Melipona Beecheii en gotero de 30 ml, disponible en dos formas de frasco de cristal oscuro: redondo y cuadrado.",
+      "Miel Melipona Beecheii (sin aguijón) en gotero de 30 ml, disponible en dos formas de frasco de cristal oscuro: redondo y cuadrado.",
     benefits: [
       "Dos formas de frasco para elegir",
       "Cristal oscuro con presentación artesanal",
@@ -279,19 +279,19 @@ const products: Product[] = [
     ],
     page: 17,
     image: GOTERO_10ML_URL,
-    imageAlt: "Frasco grande de miel Melipona Beecheii para la presentación de 30 ml.",
+    imageAlt: "Frasco grande de miel Melipona Beecheii (sin aguijón) para la presentación de 30 ml.",
     imageCaption:
       "Presentación de 30 ml · frasco redondo o cuadrado · precio vigente comunicado por la tienda",
   },
   {
     id: "melipona-50",
-    name: "Miel Melipona Beecheii · frasco cuadrado",
+    name: "Miel Melipona Beecheii (sin aguijón) · frasco cuadrado",
     category: "Miel Melipona",
     price: "$440",
     size: "50 ml · cristal oscuro cuadrado",
-    ingredient: "Miel Melipona Beecheii · cristal oscuro",
+    ingredient: "Miel Melipona Beecheii (sin aguijón) · cristal oscuro",
     description:
-      "Miel Melipona Beecheii en frasco cuadrado de cristal oscuro de 50 ml, pensado para exhibición y regalo.",
+      "Miel Melipona Beecheii (sin aguijón) en frasco cuadrado de cristal oscuro de 50 ml, pensado para exhibición y regalo.",
     benefits: [
       "Presentación cuadrada de identidad artesanal",
       "Cristal oscuro que destaca en anaquel",
@@ -305,13 +305,13 @@ const products: Product[] = [
   },
   {
     id: "melipona-estuche-50",
-    name: "Miel Melipona Beecheii · estuche pirámide de 50 ml",
+    name: "Miel Melipona Beecheii (sin aguijón) · estuche pirámide de 50 ml",
     category: "Kits y regalos",
     price: "$590",
     size: "Estuche de madera · frasco de 50 ml",
-    ingredient: "Miel Melipona Beecheii · madera",
+    ingredient: "Miel Melipona Beecheii (sin aguijón) · madera",
     description:
-      "Presentación de Miel Melipona Beecheii en un estuche de madera con forma de pirámide, creado para conservar y regalar una pieza de identidad quintanarroense.",
+      "Presentación de Miel Melipona Beecheii (sin aguijón) en un estuche de madera con forma de pirámide, creado para conservar y regalar una pieza de identidad quintanarroense.",
     benefits: [
       "Estuche de madera con alto valor de presentación",
       "Ideal para regalos turísticos y ocasiones especiales",
@@ -326,13 +326,13 @@ const products: Product[] = [
   },
   {
     id: "melipona-estuche-600",
-    name: "Miel Melipona Beecheii · estuche pirámide de 600 ml",
+    name: "Miel Melipona Beecheii (sin aguijón) · estuche pirámide de 600 ml",
     category: "Kits y regalos",
     price: "$1,850",
     size: "Estuche de madera · presentación de 600 ml",
-    ingredient: "Miel Melipona Beecheii · madera",
+    ingredient: "Miel Melipona Beecheii (sin aguijón) · madera",
     description:
-      "Presentación grande de Miel Melipona Beecheii con estuche de madera en forma de pirámide, pensada para un regalo especial o una pieza de exhibición.",
+      "Presentación grande de Miel Melipona Beecheii (sin aguijón) con estuche de madera en forma de pirámide, pensada para un regalo especial o una pieza de exhibición.",
     benefits: [
       "Formato de mayor contenido para una ocasión especial",
       "Estuche de madera con identidad artesanal",
@@ -453,7 +453,7 @@ const products: Product[] = [
     category: "Jabones",
     price: "$70",
     size: "100 g",
-    ingredient: "Cúrcuma · coco · miel Melipona Beecheii",
+    ingredient: "Cúrcuma · coco · miel Melipona Beecheii (sin aguijón)",
     description:
       "Jabón de cúrcuma con coco y miel de abejas Meliponas, elaborado para una rutina de cuidado inspirada en ingredientes tradicionales.",
     benefits: [
@@ -474,7 +474,7 @@ const products: Product[] = [
     category: "Jabones",
     price: "$77",
     size: "90 g",
-    ingredient: "Leche de cabra · miel Melipona Beecheii · fresa champagne",
+    ingredient: "Leche de cabra · miel Melipona Beecheii (sin aguijón) · fresa champagne",
     description:
       "Jabón de leche de cabra, miel Melipona y fresa champagne, con una textura cremosa para una rutina de limpieza y cuidado personal.",
     benefits: [
@@ -561,7 +561,7 @@ const products: Product[] = [
     priceDetails:
       "30 g $170 · 60 g $320 · 100 g en lata $590 · 240 g con dispensador $1,170",
     size: "30 g · 60 g · 100 g en lata · 240 g con dispensador",
-    ingredient: "Semilla de sésamo · miel Melipona Beecheii · colágeno",
+    ingredient: "Semilla de sésamo · miel Melipona Beecheii (sin aguijón) · colágeno",
     description:
       "Crema hidratante regeneradora celular para rostro y cuello, formulada con semilla de sésamo, miel Melipona y colágeno.",
     benefits: [
@@ -582,7 +582,7 @@ const products: Product[] = [
     category: "Cremas",
     price: "$290",
     size: "50 g",
-    ingredient: "Romero · miel Melipona Beecheii · vitamina E",
+    ingredient: "Romero · miel Melipona Beecheii (sin aguijón) · vitamina E",
     description:
       "Crema reafirmante para rostro y cuello a base de romero, miel Melipona y vitamina E, pensada para una rutina nocturna de cuidado.",
     benefits: [
@@ -619,13 +619,13 @@ const products: Product[] = [
   },
   {
     id: "melipona-cacao-30",
-    name: "Miel Melipona Beecheii con cacao",
+    name: "Miel Melipona Beecheii (sin aguijón) con cacao",
     category: "Multivitamínicos",
     price: "$210",
     size: "30 g",
-    ingredient: "Miel Melipona Beecheii · cacao puro",
+    ingredient: "Miel Melipona Beecheii (sin aguijón) · cacao puro",
     description:
-      "Mezcla de miel Melipona Beecheii y cacao puro que une el perfil floral de la miel con el carácter intenso del cacao.",
+      "Mezcla de miel Melipona Beecheii (sin aguijón) y cacao puro que une el perfil floral de la miel con el carácter intenso del cacao.",
     benefits: [
       "Combina dos ingredientes de identidad regional",
       "Sabor intenso y distintivo para degustación",
@@ -633,7 +633,7 @@ const products: Product[] = [
     ],
     page: 18,
     image: CACAO_ELIXIR_URL,
-    imageAlt: "Miel Melipona Beecheii con cacao.",
+    imageAlt: "Miel Melipona Beecheii (sin aguijón) con cacao.",
     imageCaption:
       "Foto de producto · elixir de miel Melipona y cacao · presentación de 30 g",
     isProductPhoto: true,
@@ -985,7 +985,7 @@ const catalogPhotos: CatalogPhoto[] = [
   },
   {
     id: "img-8134",
-    name: "Miel Melipona Beecheii con cacao",
+    name: "Miel Melipona Beecheii (sin aguijón) con cacao",
     category: "Mieles y elixires",
     image: GALLERY_URLS.img8134,
     alt: "Frasco con gotero de miel Melipona y cacao",
@@ -1033,7 +1033,7 @@ const catalogPhotos: CatalogPhoto[] = [
   },
   {
     id: "img-8173",
-    name: "Miel Melipona Beecheii",
+    name: "Miel Melipona Beecheii (sin aguijón)",
     category: "Mieles y elixires",
     image: GALLERY_URLS.img8173,
     alt: "Frasco de miel de abejas meliponas",
@@ -1261,7 +1261,7 @@ export default function Home() {
             </h1>
             <p className="hero-intro">
               La conservación y reproducción responsable de la abeja nativa{" "}
-              <i>Melipona beecheii</i> es el propósito central. El catálogo
+              <i>Melipona beecheii (sin aguijón)</i> es el propósito central. El catálogo
               reúne productos que ayudan a sostener esta ruta viva.
             </p>
             <div className="hero-actions">
@@ -1326,7 +1326,7 @@ export default function Home() {
           <div className="origin-visual-caption">
             Conservación viva
             <br />
-            <span>Melipona beecheii · Quintana Roo</span>
+            <span>Melipona beecheii (sin aguijón) · Quintana Roo</span>
           </div>
         </div>
         <div className="origin-copy">
@@ -1337,13 +1337,13 @@ export default function Home() {
           <div className="conservation-priority">
             <strong>Conservación y reproducción</strong>
             <span>
-              de la abeja nativa <i>Melipona beecheii</i>
+              de la abeja nativa <i>Melipona beecheii (sin aguijón)</i>
             </span>
           </div>
           <p>
             El objetivo primordial de XUUMIEL es contribuir a la conservación y
             reproducción responsable de las abejas nativas{" "}
-            <i>Melipona beecheii</i>, respetando sus ciclos, su hábitat y los
+            <i>Melipona beecheii (sin aguijón)</i>, respetando sus ciclos, su hábitat y los
             saberes que permiten cuidarlas en Quintana Roo.
           </p>
           <p>
@@ -1382,8 +1382,8 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            La conservación de <i>Melipona beecheii</i> reúne naturaleza,
-            memoria comunitaria y trabajo artesanal. Esta historia acompaña cada
+            La conservación de <i>Melipona beecheii (sin aguijón)</i> reúne naturaleza,
+            memoria comunitaria y labor artesanal. Esta historia acompaña cada
             decisión del meliponario y cada pieza del catálogo.
           </p>
         </div>
@@ -1394,7 +1394,7 @@ export default function Home() {
               <p className="story-kicker">La especie</p>
               <h3>Una abeja nativa sin aguijón.</h3>
               <p>
-                <i>Melipona beecheii</i> forma parte de la biodiversidad de la
+                <i>Melipona beecheii (sin aguijón)</i> forma parte de la biodiversidad de la
                 Península de Yucatán. Su cuidado exige conocer sus ritmos,
                 proteger su entorno y mantener colonias sanas.
               </p>
@@ -1468,7 +1468,7 @@ export default function Home() {
           <p>
             Después de la historia y la cultura vienen las acciones que ya
             estamos impulsando para proteger a la abeja nativa{" "}
-            <i>Melipona beecheii</i> y sumar a más personas a esta ruta.
+            <i>Melipona beecheii (sin aguijón)</i> y sumar a más personas a esta ruta.
           </p>
         </div>
         <div className="projects-grid">
@@ -1478,7 +1478,7 @@ export default function Home() {
               <b>En proceso</b>
             </div>
             <h3>
-              Lograr un santuario de abejas nativas <i>Melipona beecheii</i>.
+              Lograr un santuario de abejas nativas <i>Melipona beecheii (sin aguijón)</i>.
             </h3>
             <p>
               Trabajamos para hacer realidad un espacio dedicado a la
@@ -1493,7 +1493,7 @@ export default function Home() {
             </div>
             <h3>
               Forma parte de la comunidad de abejer@s de{" "}
-              <i>Melipona beecheii</i>.
+              <i>Melipona beecheii (sin aguijón)</i>.
             </h3>
             <p>
               La comunidad ya está funcionando. Contáctanos para agendar una
