@@ -74,6 +74,8 @@ const HONEY_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/VkEKfdnqSiaFipIM.png";
 const MELIPONA_50ML_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/zMRpWUTxcczdWsoU.png";
+const MELIPONA_BOX_50ML_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/GmOHXZcpkFthWbNX.png";
 const GOTERO_10ML_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LMWyKSbOJwzOWaUp.png";
 const GOTERO_20ML_URL =
@@ -320,11 +322,11 @@ const products: Product[] = [
       "Combina producto local con una presentación artesanal",
     ],
     page: 17,
-    image: catalogPages.p17,
+    image: MELIPONA_BOX_50ML_URL,
     imageAlt:
-      "Presentación artesanal de miel melipona en estuche de madera pirámide.",
+      "Estuche de madera abierto con frasco de miel Melipona Beecheii (sin aguijón) de 50 ml.",
     imageCaption:
-      "Referencia visual del estuche pirámide · presentación de 50 ml",
+      "Estuche de madera con frasco de 50 ml · precio vigente comunicado por la tienda",
   },
   {
     id: "melipona-estuche-600",
