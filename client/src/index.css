@@ -317,7 +317,7 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
 .footer-links { display: flex; gap: 1rem; justify-self: end; }
 .footer-links a { color: #e7bc62; font-size: 0.61rem; }
 
-.product-dialog { display: grid !important; grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1fr); max-width: min(900px, calc(100% - 2rem)) !important; max-height: min(680px, calc(100vh - 2rem)); overflow: hidden; padding: 0 !important; border: 1px solid rgb(88 54 40 / 36%) !important; border-radius: 0 !important; background: #fcf8ee !important; color: var(--cacao); }
+.product-dialog { display: grid !important; grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1fr); max-width: min(900px, calc(100% - 2rem)) !important; max-height: min(680px, calc(100vh - 2rem)); overflow: hidden; padding: 0 !important; border: 1px solid rgb(88 54 40 / 36%) !important; border-radius: 0 !important; background: #fcf8ee !important; color: var(--cacao); touch-action: pinch-zoom; }
 .product-dialog-visual { position: relative; min-height: 430px; overflow: hidden; background: var(--wax); cursor: grab; touch-action: none; user-select: none; }
 .product-dialog-visual:active { cursor: grabbing; }
 .product-dialog-visual::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, rgb(46 27 20 / 68%), transparent 40%); }
@@ -329,7 +329,7 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
 .image-viewer-hint { position: absolute; z-index: 2; top: 1rem; left: 1rem; padding: 0.42rem 0.55rem; background: rgb(46 27 20 / 68%); color: #fffaf0; font-size: 0.52rem; font-weight: 800; letter-spacing: 0.05em; pointer-events: none; text-transform: uppercase; }
 .image-viewer-reset { position: absolute; z-index: 3; top: 1rem; right: 1rem; border: 1px solid rgb(255 250 240 / 72%); padding: 0.45rem 0.58rem; background: rgb(46 27 20 / 72%); color: #fffaf0; cursor: pointer; font-size: 0.52rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; touch-action: manipulation; }
 .image-viewer-reset:hover { background: var(--amber); color: var(--cacao); }
-.product-dialog-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 4vw, 3.4rem); overflow-y: auto; }
+.product-dialog-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 4vw, 3.4rem); overflow-y: auto; overscroll-behavior: contain; touch-action: pan-y pinch-zoom; -webkit-text-size-adjust: 100%; }
 .product-dialog-copy [data-slot="dialog-title"] { padding-right: 1rem; color: var(--cacao); font-family: "DM Serif Display", Georgia, serif; font-size: clamp(2rem, 3vw, 3rem); font-weight: 400; letter-spacing: -0.035em; line-height: 0.98; }
 .product-dialog-copy [data-slot="dialog-description"] { margin-top: 0.25rem; color: #735747; font-size: 0.8rem; line-height: 1.66; }
 .product-specs { margin: 1.6rem 0 1.55rem; border-top: 1px solid rgb(88 54 40 / 21%); }
