@@ -86,8 +86,8 @@ const GOTERO_20ML_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/BIDPsgwLjJQjYNVF.png";
 const GOTERO_30ML_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/ZbXYjPhzdELQdpGT.png";
-const CACAO_ELIXIR_URL =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/WhPQiQqlRzAaajOP.png";
+const MELIPONA_CACAO_30_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/qdfxRxGNuoFFNTuE.png";
 const GALLERY_URLS = {
   img8090:
     "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FVjiYoRnRUOswewl.png",
@@ -638,31 +638,12 @@ const products: Product[] = [
       "Presentación pequeña para regalo o consumo personal",
     ],
     page: 18,
-    image: CACAO_ELIXIR_URL,
-    imageAlt: "Miel Melipona Beecheii (sin aguijón) con cacao.",
+    image: MELIPONA_CACAO_30_URL,
+    imageAlt:
+      "Frasco individual de miel Melipona Beecheii (sin aguijón) con cacao.",
     imageCaption:
-      "Foto de producto · elixir de miel Melipona y cacao · presentación de 30 g",
+      "Foto de producto · miel Melipona Beecheii (sin aguijón) con cacao · presentación de 30 g",
     isProductPhoto: true,
-  },
-  {
-    id: "cacao-puro-polvo",
-    name: "Cacao puro en polvo",
-    category: "Cacao",
-    price: "$90",
-    size: "200 g",
-    ingredient: "Cacao puro en polvo",
-    description:
-      "Cacao puro en polvo para bebidas, repostería y preparaciones de cocina, con sabor profundo y aroma intenso.",
-    benefits: [
-      "Versátil para bebidas y recetas",
-      "Sabor profundo y aroma característico",
-      "Presentación práctica para consumo en casa",
-    ],
-    page: 18,
-    image: INGREDIENTS_URL,
-    imageAlt: "Cacao puro en polvo y otros ingredientes de la colección.",
-    imageCaption:
-      "Imagen de ingredientes · cacao puro en polvo · presentación de 200 g",
   },
   {
     id: "propoleo-eucalipto",
