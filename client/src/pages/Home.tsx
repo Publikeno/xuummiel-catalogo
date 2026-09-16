@@ -60,6 +60,8 @@ const ARROZ_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/pDRRCxLqHbEchDKn.png";
 const SABILA_MENTA_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/zRivaShqPnxVMNue.png";
+const AVENA_SOAP_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/YSJHYCIaOOhxdCcf.png";
 const TEPEZCOHUITE_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/MsOZTjFDNADwnXdY.png";
 const HONEYCOMB_SOAP_URL =
@@ -449,9 +451,9 @@ const products: Product[] = [
       "Acompaña una rutina para piel normal o grasa",
     ],
     page: 4,
-    image: catalogPages.p04,
-    imageAlt: "Jabón artesanal de avena.",
-    imageCaption: "Lámina del catálogo · jabón de avena · presentación de 70 g",
+    image: AVENA_SOAP_URL,
+    imageAlt: "Jabón artesanal de avena presentado en tres piezas.",
+    imageCaption: "Foto de producto · jabón de avena · presentación de 70 g",
   },
   {
     id: "jabon-curcuma",
