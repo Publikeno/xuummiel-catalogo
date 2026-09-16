@@ -238,8 +238,8 @@ const products: Product[] = [
       "Producto de Quintana Roo que apoya la conservación de las abejas nativas",
     ],
     page: 17,
-    image: GOTERO_10ML_URL,
-    imageAlt: "Gotero de miel Melipona Beecheii de 10 ml, sin fondo.",
+    image: GOTERO_30ML_URL,
+    imageAlt: "Frasco pequeño de miel Melipona Beecheii para la presentación de 10 ml.",
     imageCaption:
       "Miel Melipona Beecheii en presentación gotero · precio vigente comunicado por la tienda",
   },
@@ -278,8 +278,8 @@ const products: Product[] = [
       "Tamaño práctico para regalo o consumo personal",
     ],
     page: 17,
-    image: GOTERO_30ML_URL,
-    imageAlt: "Gotero de miel Melipona Beecheii de 30 ml, sin fondo.",
+    image: GOTERO_10ML_URL,
+    imageAlt: "Frasco grande de miel Melipona Beecheii para la presentación de 30 ml.",
     imageCaption:
       "Presentación de 30 ml · frasco redondo o cuadrado · precio vigente comunicado por la tienda",
   },
