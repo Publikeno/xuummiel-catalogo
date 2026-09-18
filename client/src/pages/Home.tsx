@@ -65,13 +65,13 @@ const SABILA_MENTA_SOAP_URL =
 const AVENA_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/YSJHYCIaOOhxdCcf.png";
 const TEPEZCOHUITE_SOAP_URL =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/MsOZTjFDNADwnXdY.png";
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/CbeaSdZvQUIgabJd.png";
 const HONEYCOMB_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/DdIYdkhuGAzvNQIX.png";
 const NEEM_HONEY_SOAP_URL =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nVukVmcbTQxCpgtn.png";
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/YKDMKUwclKywVitS.png";
 const TURMERIC_SOAP_URL =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/YeLrghWIlVrLcWdU.png";
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/UnQkTBBLKkiCIgih.png";
 const STRAWBERRY_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/KTJzlUwgSbTFuXuM.png";
 const RCH_CREAM_URL =
