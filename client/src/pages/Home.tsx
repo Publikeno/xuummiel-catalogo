@@ -86,6 +86,14 @@ const TOURIST_GIFT_BOX_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/fvkLmqvJhuxKYqEM.png";
 const RECYCLED_APIS_360_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/TbKpRVLpUZJhBpNN.png";
+const RECYCLED_APIS_700_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/bwzxlhkBGSNdCuYy.png";
+const HAIR_SHAMPOO_125ML_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/MrkSNmfjFfisLMrs.png";
+const HAIR_SHAMPOO_250ML_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/MfhikxYHwcFbxXnC.png";
+const HAIR_SHAMPOO_500ML_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/VnUjcvEkzlbWnYfv.png";
 const MELIPONA_50ML_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/zMRpWUTxcczdWsoU.png";
 const MELIPONA_BOX_50ML_URL =
@@ -158,6 +166,7 @@ type Category =
   | "Miel Melipona"
   | "Jabones"
   | "Cremas"
+  | "Cuidado capilar"
   | "Multivitamínicos"
   | "Propóleo"
   | "Hidromiel"
@@ -182,6 +191,7 @@ type Product = {
   imageAlt?: string;
   imageCaption?: string;
   isProductPhoto?: boolean;
+  logoOnly?: boolean;
   label?: string;
 };
 
@@ -791,10 +801,10 @@ const products: Product[] = [
       "Formato intermedio para hogar o regalo",
     ],
     page: null,
-    image: HONEY_URL,
+    image: RECYCLED_APIS_700_URL,
     imageAlt: "Botella reciclada de vino con miel Apis.",
-    imageCaption:
-      "Foto de referencia de miel Apis · botella reciclada de 700 g",
+    imageCaption: "Foto de producto · miel Apis · botella reciclada de 700 g",
+    isProductPhoto: true,
   },
   {
     id: "miel-apis-reciclada-1kg",
@@ -811,9 +821,10 @@ const products: Product[] = [
       "Alternativa con enfoque de aprovechamiento de materiales",
     ],
     page: null,
-    image: HONEY_URL,
-    imageAlt: "Botella reciclada de vino con miel Apis.",
+    image: EMBLEM_URL,
+    imageAlt: "Logotipo XUUMIEL para presentación de Miel Apis reciclada de 1 kg.",
     imageCaption: "Foto de referencia de miel Apis · botella reciclada de 1 kg",
+    logoOnly: true,
   },
   {
     id: "miel-apis-reciclada-1300",
@@ -830,10 +841,10 @@ const products: Product[] = [
       "Ideal para clientes frecuentes o venta por volumen",
     ],
     page: null,
-    image: HONEY_URL,
-    imageAlt: "Botella grande reciclada de vino con miel Apis.",
-    imageCaption:
-      "Foto de referencia de miel Apis · botella reciclada de 1.3 kg",
+    image: EMBLEM_URL,
+    imageAlt: "Logotipo XUUMIEL para presentación de Miel Apis reciclada de 1.3 kg.",
+    imageCaption: "Logotipo de referencia · miel Apis · botella reciclada de 1.3 kg",
+    logoOnly: true,
   },
   {
     id: "estropajo-ixtle",
@@ -875,6 +886,66 @@ const products: Product[] = [
     imageCaption:
       "Imagen de referencia · estropajo de árbol con orilla de tela",
   },
+  {
+    id: "shampoo-mascarilla-125",
+    name: "Shampoo mascarilla para cabello",
+    category: "Cuidado capilar",
+    price: "$75",
+    size: "125 ml",
+    ingredient: "Miel · romero · canela",
+    description:
+      "Shampoo mascarilla para cabello de miel, romero y canela, pensado para restaurar, reparar y fortalecer el cabello, aportando suavidad natural y brillo.",
+    benefits: [
+      "Ayuda a restaurar y reparar el cabello",
+      "Contribuye a fortalecerlo",
+      "Aporta suavidad natural y brillo",
+    ],
+    page: null,
+    image: HAIR_SHAMPOO_125ML_URL,
+    imageAlt: "Shampoo mascarilla para cabello de miel, romero y canela de 125 ml.",
+    imageCaption: "Foto de producto · shampoo mascarilla para cabello · 125 ml",
+    isProductPhoto: true,
+  },
+  {
+    id: "shampoo-mascarilla-250",
+    name: "Shampoo mascarilla para cabello",
+    category: "Cuidado capilar",
+    price: "$150",
+    size: "250 ml",
+    ingredient: "Miel · romero · canela",
+    description:
+      "Shampoo mascarilla para cabello de miel, romero y canela, pensado para restaurar, reparar y fortalecer el cabello, aportando suavidad natural y brillo.",
+    benefits: [
+      "Ayuda a restaurar y reparar el cabello",
+      "Contribuye a fortalecerlo",
+      "Aporta suavidad natural y brillo",
+    ],
+    page: null,
+    image: HAIR_SHAMPOO_250ML_URL,
+    imageAlt: "Shampoo mascarilla para cabello de miel, romero y canela de 250 ml.",
+    imageCaption: "Foto de producto · shampoo mascarilla para cabello · 250 ml",
+    isProductPhoto: true,
+  },
+  {
+    id: "shampoo-mascarilla-500",
+    name: "Shampoo mascarilla para cabello",
+    category: "Cuidado capilar",
+    price: "$270",
+    size: "500 ml",
+    ingredient: "Miel · romero · canela",
+    description:
+      "Shampoo mascarilla para cabello de miel, romero y canela, pensado para restaurar, reparar y fortalecer el cabello, aportando suavidad natural y brillo.",
+    benefits: [
+      "Ayuda a restaurar y reparar el cabello",
+      "Contribuye a fortalecerlo",
+      "Aporta suavidad natural y brillo",
+    ],
+    page: null,
+    image: HAIR_SHAMPOO_500ML_URL,
+    imageAlt: "Shampoo mascarilla para cabello de miel, romero y canela de 500 ml.",
+    imageCaption: "Foto de producto · shampoo mascarilla para cabello · 500 ml",
+    isProductPhoto: true,
+  },
 ];
 
 const categories: Category[] = [
@@ -882,6 +953,7 @@ const categories: Category[] = [
   "Miel Melipona",
   "Jabones",
   "Cremas",
+  "Cuidado capilar",
   "Multivitamínicos",
   "Propóleo",
   "Hidromiel",
@@ -894,6 +966,7 @@ const categories: Category[] = [
 function CategoryIcon({ category }: { category: Category }) {
   if (category === "Jabones") return <Sparkles size={17} strokeWidth={1.8} />;
   if (category === "Cremas") return <Flower2 size={17} strokeWidth={1.8} />;
+  if (category === "Cuidado capilar") return <Flower2 size={17} strokeWidth={1.8} />;
   if (
     category === "Miel Melipona" ||
     category === "Miel Apis" ||
@@ -1239,14 +1312,24 @@ function ProductCard({
       aria-label={`Ver detalles de ${product.name}`}
     >
       <div
-        className={`product-visual ${product.isProductPhoto ? "is-product-photo" : ""}`}
+        className={`product-visual ${product.isProductPhoto ? "is-product-photo" : ""} ${product.logoOnly ? "is-logo-only" : ""}`}
         >
-          <img
-            src={product.image}
-            alt={product.imageAlt ?? `Lámina del catálogo para ${product.name}`}
-          />
-          <div className="product-image-tint" />
-          <img className="product-watermark" src={EMBLEM_URL} alt="" aria-hidden="true" />
+          {product.logoOnly ? (
+            <img
+              className="product-logo-only"
+              src={product.image}
+              alt={product.imageAlt ?? "Logotipo XUUMIEL"}
+            />
+          ) : (
+            <>
+              <img
+                src={product.image}
+                alt={product.imageAlt ?? `Lámina del catálogo para ${product.name}`}
+              />
+              <div className="product-image-tint" />
+              <img className="product-watermark" src={EMBLEM_URL} alt="" aria-hidden="true" />
+            </>
+          )}
           {product.page && <span className="page-chip">p. {product.page}</span>}
         {product.label && <span className="new-chip">{product.label}</span>}
         <span className="view-chip">
