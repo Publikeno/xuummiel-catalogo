@@ -230,8 +230,8 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
 .product-visual.is-product-photo .product-image-tint { background: linear-gradient(to top, rgb(46 27 20 / 13%), transparent 60%); }
 .product-card:hover .product-visual.is-product-photo img { filter: saturate(1.04) contrast(1.02); transform: scale(1.22); }
 .product-image-tint { position: absolute; inset: 0; background: linear-gradient(to top, rgb(46 27 20 / 52%), transparent 46%); pointer-events: none; }
-.product-visual .product-watermark { position: absolute; z-index: 2; top: 0.65rem; right: 0.7rem; width: 52px; height: auto; object-fit: contain; opacity: 0.72; filter: none; mix-blend-mode: multiply; pointer-events: none; user-select: none; transform: none; }
-.product-card:hover .product-visual .product-watermark { filter: none; transform: none; }
+.product-visual .product-watermark { position: absolute; z-index: 2; top: 50%; left: 50%; width: 122px; height: auto; object-fit: contain; opacity: 0.48; filter: none; mix-blend-mode: multiply; pointer-events: none; user-select: none; transform: translate(-50%, -50%); }
+.product-card:hover .product-visual .product-watermark { filter: none; transform: translate(-50%, -50%); }
 .page-chip, .new-chip, .view-chip { position: absolute; font-size: 0.59rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .page-chip { top: 0.7rem; left: 0.7rem; padding: 0.36rem 0.45rem; background: rgb(247 240 223 / 93%); color: var(--bark); }
 .new-chip { top: 0.7rem; right: 0.7rem; padding: 0.36rem 0.45rem; background: var(--honey); color: var(--cacao); }

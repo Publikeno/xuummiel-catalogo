@@ -80,6 +80,10 @@ const CRVE_CREAM_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/dCopQCDqGlMjyLqQ.png";
 const HONEY_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/VkEKfdnqSiaFipIM.png";
+const APIS_750_BOTTLE_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/kmdvBhLzsvHYehAE.png";
+const TOURIST_GIFT_BOX_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/fvkLmqvJhuxKYqEM.png";
 const MELIPONA_50ML_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/zMRpWUTxcczdWsoU.png";
 const MELIPONA_BOX_50ML_URL =
@@ -707,10 +711,10 @@ const products: Product[] = [
       "Puede incluir natural, jengibre, guanábana, piña, yaca, cacao y vainilla",
     ],
     page: null,
-    image: catalogPages.p05,
+    image: TOURIST_GIFT_BOX_URL,
     imageAlt: "Presentación de regalo turístico con productos artesanales.",
     imageCaption:
-      "Referencia visual de kit de regalo · 3 piezas o 5 piezas según elección",
+      "Foto de producto · caja de regalo turístico · presentación de 3 piezas o 5 piezas",
   },
   {
     id: "miel-apis-750",
@@ -727,9 +731,9 @@ const products: Product[] = [
       "Tamaño familiar para consumo en casa",
     ],
     page: null,
-    image: HONEY_URL,
-    imageAlt: "Botella de miel Apis.",
-    imageCaption: "Foto de referencia de miel Apis · botella nueva de 750 g",
+    image: APIS_750_BOTTLE_URL,
+    imageAlt: "Botella completa de miel Apis en presentación de 750 g.",
+    imageCaption: "Foto de producto · miel Apis · botella nueva de 750 g",
   },
   {
     id: "miel-apis-1kg",
