@@ -48,6 +48,8 @@ const HERO_URL = portableAsset(
   "/manus-storage/xuummiel-hero-melipona_8fd14543.jpg",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/AVMZHgtozEmBgkBw.jpg"
 );
+const HERO_VIDEO_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/cmOnmdGBltmiMpFU.mp4";
 const INGREDIENTS_URL = portableAsset(
   "/manus-storage/xuummiel-ingredients-stilllife_fa1abc00.jpg",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LPPwmLxOTrbpkFxS.jpg"
@@ -1374,6 +1376,19 @@ export default function Home() {
         className="hero-section"
         aria-labelledby="hero-title"
       >
+        <video
+          className="hero-background-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster={HERO_URL}
+          aria-hidden="true"
+        >
+          <source src={HERO_VIDEO_URL} type="video/mp4" />
+        </video>
+        <div className="hero-video-tint" aria-hidden="true" />
         <div className="hero-paper-grain" />
         <div className="hero-layout" id="contenido">
           <div className="hero-copy">
