@@ -1234,13 +1234,14 @@ function ProductCard({
     >
       <div
         className={`product-visual ${product.isProductPhoto ? "is-product-photo" : ""}`}
-      >
-        <img
-          src={product.image}
-          alt={product.imageAlt ?? `Lámina del catálogo para ${product.name}`}
-        />
-        <div className="product-image-tint" />
-        {product.page && <span className="page-chip">p. {product.page}</span>}
+        >
+          <img
+            src={product.image}
+            alt={product.imageAlt ?? `Lámina del catálogo para ${product.name}`}
+          />
+          <div className="product-image-tint" />
+          <img className="product-watermark" src={EMBLEM_URL} alt="" aria-hidden="true" />
+          {product.page && <span className="page-chip">p. {product.page}</span>}
         {product.label && <span className="new-chip">{product.label}</span>}
         <span className="view-chip">
           Ver ficha <ArrowUpRight size={14} />
