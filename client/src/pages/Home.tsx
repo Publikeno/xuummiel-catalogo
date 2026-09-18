@@ -84,6 +84,8 @@ const APIS_750_BOTTLE_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/kmdvBhLzsvHYehAE.png";
 const TOURIST_GIFT_BOX_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/fvkLmqvJhuxKYqEM.png";
+const RECYCLED_APIS_360_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/TbKpRVLpUZJhBpNN.png";
 const MELIPONA_50ML_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/zMRpWUTxcczdWsoU.png";
 const MELIPONA_BOX_50ML_URL =
@@ -769,10 +771,10 @@ const products: Product[] = [
       "Tamaño práctico para regalo",
     ],
     page: null,
-    image: HONEY_URL,
-    imageAlt: "Botella reciclada de vino con miel Apis.",
+    image: RECYCLED_APIS_360_URL,
+    imageAlt: "Frasco completo de miel Apis en botella reciclada de 360 g.",
     imageCaption:
-      "Foto de referencia de miel Apis · botella reciclada de 360 g",
+      "Foto de producto · miel Apis · botella reciclada de 360 g",
   },
   {
     id: "miel-apis-reciclada-700",
