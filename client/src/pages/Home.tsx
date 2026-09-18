@@ -76,6 +76,8 @@ const STRAWBERRY_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/KTJzlUwgSbTFuXuM.png";
 const RCH_CREAM_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/sABTLISpVCTBrjSM.png";
+const CRVE_CREAM_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/dCopQCDqGlMjyLqQ.png";
 const HONEY_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/VkEKfdnqSiaFipIM.png";
 const MELIPONA_50ML_URL =
@@ -599,10 +601,10 @@ const products: Product[] = [
       "Presentación de 50 g para uso personal",
     ],
     page: 15,
-    image: catalogPages.p15,
+    image: CRVE_CREAM_URL,
     imageAlt: "Crema reafirmante CRVE R con vitamina E y romero.",
     imageCaption:
-      "Lámina del catálogo · crema reafirmante CRVE R · precio vigente comunicado por la tienda",
+      "Foto de producto · crema reafirmante CRVE R · presentación de 50 g",
   },
   {
     id: "compuesto-apis-polen-propoleo",
