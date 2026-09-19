@@ -1606,6 +1606,17 @@ export default function Home() {
         </div>
       )}
 
+      {!isInstalled && (
+        <button
+          type="button"
+          className="mobile-install-direct"
+          onClick={handleInstallStore}
+          aria-label="Instalar tienda XUUMIEL en el celular"
+        >
+          <Download size={15} /> Instalar tienda
+        </button>
+      )}
+
       <button
         type="button"
         className="mobile-return-menu"
