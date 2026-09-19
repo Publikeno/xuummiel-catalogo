@@ -8,6 +8,7 @@ import {
   ArrowUpRight,
   BookOpen,
   ChevronRight,
+  Download,
   Droplets,
   Flower2,
   Hexagon,
@@ -200,6 +201,11 @@ type Product = {
   isProductPhoto?: boolean;
   logoOnly?: boolean;
   label?: string;
+};
+
+type InstallPromptEvent = Event & {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 };
 
 const usesXuujaabBrand = (product: Product) =>
@@ -1383,6 +1389,10 @@ export default function Home() {
     useState<GalleryCollection>("Todas");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [installPrompt, setInstallPrompt] = useState<InstallPromptEvent | null>(null);
+  const [installHelpOpen, setInstallHelpOpen] = useState(false);
+  const [isIosDevice, setIsIosDevice] = useState(false);
+  const [isInstalled, setIsInstalled] = useState(false);
 
   useEffect(() => {
     const handleBrowserBack = () => {
@@ -1392,6 +1402,34 @@ export default function Home() {
 
     window.addEventListener("popstate", handleBrowserBack);
     return () => window.removeEventListener("popstate", handleBrowserBack);
+  }, []);
+
+  useEffect(() => {
+    const standalone =
+      window.matchMedia("(display-mode: standalone)").matches ||
+      (navigator as Navigator & { standalone?: boolean }).standalone === true;
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    const ios =
+      /iphone|ipad|ipod/.test(userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+    setIsInstalled(standalone);
+    setIsIosDevice(ios && !standalone);
+
+    const handleBeforeInstallPrompt = (event: Event) => {
+      event.preventDefault();
+      setInstallPrompt(event as InstallPromptEvent);
+    };
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    window.addEventListener("appinstalled", () => {
+      setInstallPrompt(null);
+      setIsInstalled(true);
+      setInstallHelpOpen(false);
+    });
+
+    return () =>
+      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
   }, []);
 
   const filteredProducts = useMemo(
@@ -1437,6 +1475,18 @@ export default function Home() {
     setMobileMenuOpen(false);
     window.history.replaceState(null, "", "#inicio");
     document.getElementById("inicio")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleInstallStore = async () => {
+    if (installPrompt) {
+      await installPrompt.prompt();
+      await installPrompt.userChoice;
+      setInstallPrompt(null);
+      setMobileMenuOpen(false);
+      return;
+    }
+
+    setInstallHelpOpen(true);
   };
 
   return (
@@ -1510,6 +1560,20 @@ export default function Home() {
             <a href="#ritual" onClick={() => setMobileMenuOpen(false)}>
               Rituales
             </a>
+            {!isInstalled && (
+              <button
+                type="button"
+                className="mobile-install-link"
+                onClick={handleInstallStore}
+              >
+                <Download size={16} />
+                {installPrompt
+                  ? "Instalar tienda"
+                  : isIosDevice
+                    ? "Instalar en iPhone"
+                    : "Añadir tienda al celular"}
+              </button>
+            )}
             <a
               href={PDF_URL}
               target="_blank"
@@ -1521,6 +1585,26 @@ export default function Home() {
           </nav>
         )}
       </header>
+
+      {installHelpOpen && !isInstalled && (
+        <div className="install-help" role="status">
+          <div>
+            <strong>Acceso directo a la tienda</strong>
+            <p>
+              {isIosDevice
+                ? "En Safari toca Compartir y después “Añadir a pantalla de inicio”."
+                : "En Chrome toca ⋮ y elige “Instalar aplicación” o “Añadir a pantalla de inicio”."}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setInstallHelpOpen(false)}
+            aria-label="Cerrar instrucciones de instalación"
+          >
+            <X size={17} />
+          </button>
+        </div>
+      )}
 
       <button
         type="button"

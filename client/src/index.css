@@ -118,6 +118,10 @@ button:not(:disabled), [role="button"]:not([aria-disabled="true"]), a[href] { cu
 .header-catalog-link:hover { border-color: var(--honey); background: var(--honey); color: var(--cacao); }
 .mobile-menu-trigger, .mobile-nav { display: none; }
 .mobile-return-menu, .product-menu-return { display: none; }
+.install-help { position: fixed; z-index: 60; right: 1rem; bottom: 4.6rem; left: 1rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; border: 1px solid rgb(88 54 40 / 24%); padding: 0.9rem 1rem; background: #fffaf0; box-shadow: 0 14px 28px rgb(46 27 20 / 18%); color: var(--cacao); }
+.install-help strong { display: block; margin-bottom: 0.25rem; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.install-help p { max-width: 500px; margin: 0; color: var(--bark); font-size: 0.72rem; line-height: 1.45; }
+.install-help button { display: grid; flex: 0 0 auto; width: 28px; height: 28px; place-items: center; border: 0; background: transparent; color: var(--bark); }
 
 .hero-section { position: relative; padding: clamp(3.75rem, 8vw, 7.2rem) clamp(1.25rem, 4vw, 4rem) clamp(4rem, 7vw, 6.5rem); background: transparent; isolation: isolate; }
 .hero-background-video { position: absolute; z-index: -3; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.72) contrast(0.96) brightness(0.82); pointer-events: none; }
@@ -386,6 +390,7 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
   .mobile-nav { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: grid; padding: 0.85rem 1rem 1rem; background: var(--paper); border-bottom: 1px solid rgb(88 54 40 / 18%); box-shadow: 0 12px 18px rgb(46 27 20 / 9%); transform-origin: top right; animation: menu-in 180ms var(--ease-out); }
   .mobile-nav a { padding: 0.75rem 0.2rem; border-bottom: 1px solid rgb(88 54 40 / 12%); color: var(--bark); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; text-decoration: none; text-transform: uppercase; }
   .mobile-nav a:last-child { border-bottom: 0; color: var(--amber); }
+  .mobile-install-link { display: flex; align-items: center; gap: 0.45rem; width: 100%; border: 0; border-bottom: 1px solid rgb(88 54 40 / 12%); padding: 0.75rem 0.2rem; background: transparent; color: var(--amber); font-family: "Manrope", sans-serif; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; text-align: left; text-transform: uppercase; }
   .hero-section { padding: 2.3rem 1.25rem 3.8rem; }
   .hero-video-tint { background: linear-gradient(180deg, rgb(247 240 223 / 91%) 0%, rgb(247 240 223 / 74%) 55%, rgb(247 240 223 / 60%) 100%); }
   .hero-layout { grid-template-columns: 1fr; min-height: 0; }
