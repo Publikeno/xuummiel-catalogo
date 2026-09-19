@@ -2,7 +2,7 @@
  * Diseño: Taller de Miel — editorial artesanal contemporáneo.
  * Principios del archivo: materias orgánicas, datos de producto claros, composición asimétrica y exploración tranquila.
  */
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -44,6 +44,8 @@ const EMBLEM_URL = portableAsset(
   "/manus-storage/logo-003_9c254216.png",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/HIVsFmCyefRWqBvl.png"
 );
+const XUUJAAB_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/ylULpCSHjiYrEBEv.png";
 const HERO_URL = portableAsset(
   "/manus-storage/xuummiel-hero-melipona_8fd14543.jpg",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/AVMZHgtozEmBgkBw.jpg"
@@ -176,6 +178,11 @@ type Category =
   | "Estropajos";
 type Collection = Exclude<Category, "Todo">;
 
+const displayCategoryName = (category: Category) =>
+  category === "Jabones"
+    ? "Jabones artesanales con miel de abejas Melipona beecheii (sin aguijón)"
+    : category;
+
 type Product = {
   id: string;
   name: string;
@@ -194,6 +201,11 @@ type Product = {
   logoOnly?: boolean;
   label?: string;
 };
+
+const usesXuujaabBrand = (product: Product) =>
+  product.category === "Jabones" ||
+  product.category === "Cremas" ||
+  product.category === "Cuidado capilar";
 
 const catalogPages = {
   p04: portableAsset(
@@ -375,7 +387,7 @@ const products: Product[] = [
   },
   {
     id: "jabon-coco-arroz",
-    name: "Jabón artesanal de coco y arroz",
+    name: "Jabón de coco y arroz",
     category: "Jabones",
     price: "$77",
     size: "70 g",
@@ -389,14 +401,14 @@ const products: Product[] = [
     ],
     page: 4,
     image: ARROZ_SOAP_URL,
-    imageAlt: "Jabón artesanal de coco y arroz con etiqueta XUUJÁAB.",
+    imageAlt: "Jabón de coco y arroz con etiqueta XUUJÁAB.",
     imageCaption:
       "Foto de producto · jabón de arroz base coco · presentación de 70 g",
     isProductPhoto: true,
   },
   {
     id: "jabon-neem",
-    name: "Jabón artesanal de neem",
+    name: "Jabón de neem",
     category: "Jabones",
     price: "$77",
     size: "70 g",
@@ -410,35 +422,35 @@ const products: Product[] = [
     ],
     page: 7,
     image: NEEM_HONEY_SOAP_URL,
-    imageAlt: "Jabón artesanal de neem.",
+    imageAlt: "Jabón de neem.",
     imageCaption:
       "Foto de producto · jabón de neem base coco · presentación de 70 g",
     isProductPhoto: true,
   },
   {
     id: "jabon-tepezcohuite",
-    name: "Jabón artesanal de tepezcohuite",
+    name: "Jabón de tepezcohuite",
     category: "Jabones",
     price: "$90",
     size: "100 g",
     ingredient: "Tepezcohuite",
     description:
-      "Jabón artesanal de tepezcohuite, un ingrediente tradicional mexicano elegido para una limpieza con perfil vegetal y sensación purificante.",
+      "Jabón de tepezcohuite, un ingrediente tradicional mexicano elegido para una limpieza con perfil vegetal y sensación purificante.",
     benefits: [
       "Limpieza diaria con un ingrediente de tradición mexicana",
       "Sensación de frescura y cuidado después del baño",
-      "Barra artesanal adecuada para integrar en kits de regalo",
+      "Barra adecuada para integrar en kits de regalo",
     ],
     page: 5,
     image: TEPEZCOHUITE_SOAP_URL,
-    imageAlt: "Jabón artesanal oscuro de tepezcohuite.",
+    imageAlt: "Jabón oscuro de tepezcohuite.",
     imageCaption:
       "Foto de producto · jabón de tepezcohuite · presentación de 100 g",
     isProductPhoto: true,
   },
   {
     id: "jabon-sabila-menta",
-    name: "Jabón artesanal de sábila y menta",
+    name: "Jabón de sábila y menta",
     category: "Jabones",
     price: "$50",
     size: "80 g",
@@ -452,19 +464,19 @@ const products: Product[] = [
     ],
     page: 11,
     image: SABILA_MENTA_SOAP_URL,
-    imageAlt: "Jabón artesanal individual de sábila y menta.",
+    imageAlt: "Jabón individual de sábila y menta.",
     imageCaption:
       "Foto de producto · jabón individual de sábila y menta · presentación de 80 g",
   },
   {
     id: "jabon-avena",
-    name: "Jabón artesanal de avena",
+    name: "Jabón de avena",
     category: "Jabones",
     price: "$37",
     size: "70 g",
     ingredient: "Avena",
     description:
-      "Jabón artesanal de avena para una limpieza reconfortante; el catálogo lo recomienda para piel normal y grasa por su perfil astringente.",
+      "Jabón de avena para una limpieza reconfortante; el catálogo lo recomienda para piel normal y grasa por su perfil astringente.",
     benefits: [
       "Limpieza delicada de la piel",
       "Sensación confortable durante el baño",
@@ -472,12 +484,12 @@ const products: Product[] = [
     ],
     page: 4,
     image: AVENA_SOAP_URL,
-    imageAlt: "Jabón artesanal de avena presentado en tres piezas.",
+    imageAlt: "Jabón de avena presentado en tres piezas.",
     imageCaption: "Foto de producto · jabón de avena · presentación de 70 g",
   },
   {
     id: "jabon-curcuma",
-    name: "Jabón artesanal de cúrcuma",
+    name: "Jabón de cúrcuma",
     category: "Jabones",
     price: "$70",
     size: "100 g",
@@ -487,18 +499,18 @@ const products: Product[] = [
     benefits: [
       "Limpieza diaria con ingrediente botánico",
       "Aroma y color característicos de la cúrcuma",
-      "Presentación artesanal para una rutina de bienestar",
+      "Presentación para una rutina de bienestar",
     ],
     page: 8,
     image: TURMERIC_SOAP_URL,
-    imageAlt: "Jabón artesanal de cúrcuma.",
+    imageAlt: "Jabón de cúrcuma.",
     imageCaption:
       "Foto de producto · jabón de cúrcuma con coco y miel Melipona · presentación de 100 g",
     isProductPhoto: true,
   },
   {
     id: "jabon-leche-cabra",
-    name: "Jabón artesanal de leche de cabra",
+    name: "Jabón de leche de cabra",
     category: "Jabones",
     price: "$77",
     size: "90 g",
@@ -512,20 +524,20 @@ const products: Product[] = [
     ],
     page: 9,
     image: GALLERY_URLS.img8097,
-    imageAlt: "Jabón artesanal de leche de cabra y fresa champagne.",
+    imageAlt: "Jabón de leche de cabra y fresa champagne.",
     imageCaption:
       "Foto del catálogo · jabón de leche de cabra, miel Melipona y fresa champagne · presentación de 90 g",
     isProductPhoto: true,
   },
   {
     id: "jabon-azul",
-    name: "Jabón artesanal azul",
+    name: "Jabón azul",
     category: "Jabones",
     price: "$50",
     size: "Pieza",
-    ingredient: "Fórmula artesanal por confirmar",
+    ingredient: "Fórmula por confirmar",
     description:
-      "Jabón artesanal azul de presentación visual distintiva para integrar variedad a la colección de cuidado personal.",
+      "Jabón azul de presentación visual distintiva para integrar variedad a la colección de cuidado personal.",
     benefits: [
       "Limpieza cotidiana",
       "Presentación visual diferenciada",
@@ -533,20 +545,20 @@ const products: Product[] = [
     ],
     page: null,
     image: GALLERY_URLS.img8111,
-    imageAlt: "Jabón artesanal azul.",
+    imageAlt: "Jabón azul.",
     imageCaption:
       "Foto de producto · jabón azul · peso e ingredientes por confirmar",
     isProductPhoto: true,
   },
   {
     id: "jabon-lavanda",
-    name: "Jabón artesanal de lavanda",
+    name: "Jabón de lavanda",
     category: "Jabones",
     price: "$60",
     size: "60 g",
     ingredient: "Lavanda",
     description:
-      "Jabón artesanal de lavanda con aroma floral para convertir la limpieza diaria en un momento de pausa y cuidado.",
+      "Jabón de lavanda con aroma floral para convertir la limpieza diaria en un momento de pausa y cuidado.",
     benefits: [
       "Aroma floral agradable",
       "Limpieza diaria con una experiencia sensorial suave",
@@ -554,7 +566,7 @@ const products: Product[] = [
     ],
     page: 10,
     image: GALLERY_URLS.img8115,
-    imageAlt: "Jabón artesanal de lavanda.",
+    imageAlt: "Jabón de lavanda.",
     imageCaption: "Foto de producto · jabón de lavanda · presentación de 60 g",
     isProductPhoto: true,
   },
@@ -1010,7 +1022,7 @@ const catalogPhotos: CatalogPhoto[] = [
     name: "Jabón de arroz base coco",
     category: "Jabones artesanales",
     image: GALLERY_URLS.img8090,
-    alt: "Jabón artesanal de arroz base coco",
+    alt: "Jabón de arroz base coco",
     note: "Producto de la lista vigente",
   },
   {
@@ -1018,7 +1030,7 @@ const catalogPhotos: CatalogPhoto[] = [
     name: "Jabón de leche de cabra y fresa champagne",
     category: "Jabones artesanales",
     image: GALLERY_URLS.img8097,
-    alt: "Jabón artesanal rosa de leche de cabra y fresa champagne",
+    alt: "Jabón rosa de leche de cabra y fresa champagne",
     note: "Producto de la lista vigente",
   },
   {
@@ -1042,7 +1054,7 @@ const catalogPhotos: CatalogPhoto[] = [
     name: "Jabón azul",
     category: "Jabones artesanales",
     image: GALLERY_URLS.img8111,
-    alt: "Jabón artesanal azul",
+    alt: "Jabón azul",
     note: "Producto de la lista vigente",
   },
   {
@@ -1050,7 +1062,7 @@ const catalogPhotos: CatalogPhoto[] = [
     name: "Jabón de lavanda",
     category: "Jabones artesanales",
     image: GALLERY_URLS.img8115,
-    alt: "Jabón artesanal de lavanda envuelto",
+    alt: "Jabón de lavanda envuelto",
     note: "Producto de la lista vigente",
   },
   {
@@ -1114,7 +1126,7 @@ const catalogPhotos: CatalogPhoto[] = [
     name: "Jabón de cúrcuma",
     category: "Jabones artesanales",
     image: GALLERY_URLS.turmericSoap,
-    alt: "Jabón artesanal de cúrcuma",
+    alt: "Jabón de cúrcuma",
     note: "Producto de la lista vigente",
   },
   {
@@ -1122,7 +1134,7 @@ const catalogPhotos: CatalogPhoto[] = [
     name: "Jabón de neem",
     category: "Jabones artesanales",
     image: GALLERY_URLS.neemHoneySoap,
-    alt: "Jabón artesanal de neem",
+    alt: "Jabón de neem",
     note: "Producto de la lista vigente",
   },
   {
@@ -1280,6 +1292,14 @@ function ProductImageViewer({ product }: ProductImageViewerProps) {
           transform: `translate3d(${transform.x}px, ${transform.y}px, 0) scale(${transform.scale})`,
         }}
       />
+      {usesXuujaabBrand(product) && (
+        <img
+          className="product-dialog-watermark"
+          src={XUUJAAB_URL}
+          alt=""
+          aria-hidden="true"
+        />
+      )}
       <button
         type="button"
         className="image-viewer-reset"
@@ -1327,7 +1347,12 @@ function ProductCard({
                 alt={product.imageAlt ?? `Lámina del catálogo para ${product.name}`}
               />
               <div className="product-image-tint" />
-              <img className="product-watermark" src={EMBLEM_URL} alt="" aria-hidden="true" />
+              <img
+                className={`product-watermark ${usesXuujaabBrand(product) ? "product-watermark-xuujaab" : ""}`}
+                src={usesXuujaabBrand(product) ? XUUJAAB_URL : EMBLEM_URL}
+                alt=""
+                aria-hidden="true"
+              />
             </>
           )}
           {product.page && <span className="page-chip">p. {product.page}</span>}
@@ -1337,7 +1362,7 @@ function ProductCard({
         </span>
       </div>
       <div className="product-copy">
-        <p className="product-category">{product.category}</p>
+        <p className="product-category">{displayCategoryName(product.category)}</p>
         <div className="product-heading-row">
           <h3>{product.name}</h3>
           <span className="product-price">
@@ -1359,6 +1384,16 @@ export default function Home() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const handleBrowserBack = () => {
+      setSelectedProduct(null);
+      setMobileMenuOpen(false);
+    };
+
+    window.addEventListener("popstate", handleBrowserBack);
+    return () => window.removeEventListener("popstate", handleBrowserBack);
+  }, []);
+
   const filteredProducts = useMemo(
     () =>
       selectedCategory === "Todo"
@@ -1379,6 +1414,30 @@ export default function Home() {
 
   const scrollToCatalog = () =>
     document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
+
+  const openProduct = (product: Product) => {
+    setSelectedProduct(product);
+    window.history.pushState(
+      { productId: product.id },
+      "",
+      `#producto-${product.id}`
+    );
+  };
+
+  const closeProduct = () => {
+    if (window.location.hash.startsWith("#producto-")) {
+      window.history.back();
+    } else {
+      setSelectedProduct(null);
+    }
+  };
+
+  const returnToMenu = () => {
+    setSelectedProduct(null);
+    setMobileMenuOpen(false);
+    window.history.replaceState(null, "", "#inicio");
+    document.getElementById("inicio")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <main className="page-shell">
@@ -1462,6 +1521,15 @@ export default function Home() {
           </nav>
         )}
       </header>
+
+      <button
+        type="button"
+        className="mobile-return-menu"
+        onClick={returnToMenu}
+        aria-label="Regresar al menú principal"
+      >
+        <Menu size={15} /> Menú
+      </button>
 
       <section
         id="inicio"
@@ -1775,7 +1843,7 @@ export default function Home() {
               onClick={() => setSelectedCategory(category)}
             >
               <CategoryIcon category={category} />
-              {category}
+              {displayCategoryName(category)}
               <span>
                 {category === "Todo"
                   ? products.length
@@ -1802,7 +1870,7 @@ export default function Home() {
             <ProductCard
               key={product.id}
               product={product}
-              onOpen={setSelectedProduct}
+              onOpen={openProduct}
             />
           ))}
         </div>
@@ -1954,7 +2022,7 @@ export default function Home() {
                 type="button"
                 className="kit-card"
                 key={kit.id}
-                onClick={() => setSelectedProduct(kit)}
+                onClick={() => openProduct(kit)}
               >
                 <div className="kit-number">0{index + 1}</div>
                 <div className="kit-preview">
@@ -2049,15 +2117,22 @@ export default function Home() {
 
       <Dialog
         open={Boolean(selectedProduct)}
-        onOpenChange={open => !open && setSelectedProduct(null)}
+        onOpenChange={open => !open && closeProduct()}
       >
         {selectedProduct && (
           <DialogContent className="product-dialog">
             <ProductImageViewer product={selectedProduct} />
             <div className="product-dialog-copy">
+              <button
+                type="button"
+                className="product-menu-return"
+                onClick={returnToMenu}
+              >
+                <Menu size={15} /> Regresar al menú
+              </button>
               <DialogHeader>
                 <p className="eyebrow dark">
-                  <span className="eyebrow-dot" /> {selectedProduct.category}
+                  <span className="eyebrow-dot" /> {displayCategoryName(selectedProduct.category)}
                 </p>
                 <DialogTitle>{selectedProduct.name}</DialogTitle>
                 <DialogDescription>
