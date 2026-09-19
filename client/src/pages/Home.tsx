@@ -726,25 +726,28 @@ const products: Product[] = [
   },
   {
     id: "regalo-turistico",
-    name: "Presentación regalo turístico",
+    name: "Tren Maya 🚄 de madera de cedro",
     category: "Kits y regalos",
-    price: "$250",
-    priceDetails: "3 piezas $250 · 5 piezas $370",
-    size: "Presentación de 3 o 5 piezas",
+    price: "$1,200",
+    priceDetails: "Kit completo Tren Maya de cedro · $1,200",
+    size: "Kit de 5 piezas",
     ingredient:
-      "Natural · jengibre · guanábana · piña · yaca · cacao · vainilla",
+      "Madera de cedro · miel de abejas Melipona beecheii (sin aguijón) · XUUMIEL · XUUJÁAB",
     description:
-      "Presentación de regalo turístico con sabores naturales y frutales para compartir una selección artesanal de Quintana Roo.",
+      "Tren Maya elaborado con madera de cedro, pensado como regalo turístico con productos que contienen miel de abejas Melipona beecheii (sin aguijón), con las marcas XUUMIEL y XUUJÁAB. La miel aparece al frente, en la cabina del conductor del Tren Maya.",
     benefits: [
-      "Variedad de sabores en una sola presentación",
-      "Formato pensado para visitantes y obsequios",
-      "Puede incluir natural, jengibre, guanábana, piña, yaca, cacao y vainilla",
+      "Miel en frasco de cristal de 50 ml",
+      "Crema CHRC M · 30 g",
+      "Jabón de sándalo con miel · 50 g",
+      "Propóleo · 15 ml",
+      "Estropajo",
     ],
     page: null,
     image: TOURIST_GIFT_BOX_URL,
-    imageAlt: "Presentación de regalo turístico con productos artesanales.",
+    imageAlt: "Tren Maya elaborado con madera de cedro, con grabado del Tren Maya.",
     imageCaption:
-      "Foto de producto · caja de regalo turístico · presentación de 3 piezas o 5 piezas",
+      "Foto de producto · Tren Maya de cedro · kit con miel, crema, jabón, propóleo y estropajo",
+    isProductPhoto: true,
   },
   {
     id: "miel-apis-750",
@@ -1186,10 +1189,11 @@ type PointerPosition = {
   y: number;
 };
 
-const clampZoom = (value: number) => Math.min(4, Math.max(1, value));
+const INITIAL_IMAGE_SCALE = 0.82;
+const clampZoom = (value: number) => Math.min(4, Math.max(INITIAL_IMAGE_SCALE, value));
 
 function ProductImageViewer({ product }: ProductImageViewerProps) {
-  const [transform, setTransform] = useState({ scale: 1, x: 0, y: 0 });
+  const [transform, setTransform] = useState({ scale: INITIAL_IMAGE_SCALE, x: 0, y: 0 });
   const pointers = useRef(new Map<number, PointerPosition>());
   const dragStart = useRef<{
     x: number;
@@ -1199,7 +1203,8 @@ function ProductImageViewer({ product }: ProductImageViewerProps) {
   } | null>(null);
   const pinchStart = useRef<{ distance: number; scale: number } | null>(null);
 
-  const resetView = () => setTransform({ scale: 1, x: 0, y: 0 });
+  const resetView = () =>
+    setTransform({ scale: INITIAL_IMAGE_SCALE, x: 0, y: 0 });
   const distanceBetween = (points: PointerPosition[]) => {
     const [first, second] = points;
     return Math.hypot(second.x - first.x, second.y - first.y);
@@ -1280,7 +1285,9 @@ function ProductImageViewer({ product }: ProductImageViewerProps) {
       className={`product-dialog-visual ${product.isProductPhoto ? "is-product-photo" : ""}`}
       onDoubleClick={() =>
         setTransform(current =>
-          current.scale > 1 ? { scale: 1, x: 0, y: 0 } : { ...current, scale: 2 },
+          current.scale > 1
+            ? { scale: INITIAL_IMAGE_SCALE, x: 0, y: 0 }
+            : { ...current, scale: 2 },
         )
       }
       onPointerCancel={handlePointerEnd}
