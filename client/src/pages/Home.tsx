@@ -45,6 +45,8 @@ const EMBLEM_URL = portableAsset(
   "/manus-storage/logo-003_9c254216.png",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/HIVsFmCyefRWqBvl.png"
 );
+const REGIONAL_LOGO_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/ICuMTBnjPujuSvGE.jpg";
 const XUUJAAB_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/ylULpCSHjiYrEBEv.png";
 const HERO_URL = portableAsset(
@@ -1512,6 +1514,10 @@ export default function Home() {
           <span className="brand-route">La Ruta de la Miel</span>
         </a>
 
+        <div className="regional-mark" aria-label="Hecho en Quintana Roo">
+          <img src={REGIONAL_LOGO_URL} alt="Hecho en Quintana Roo" />
+        </div>
+
         <nav className="desktop-nav" aria-label="Navegación principal">
           <a href="#origen">Conservación</a>
           <a href="#historia-cultura">Historia y cultura</a>
@@ -2199,7 +2205,14 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="footer-brand">
-          <img src={EMBLEM_URL} alt="Logotipo original XUUMIEL con pirámides" />
+          <div className="footer-brand-logos">
+            <img src={EMBLEM_URL} alt="Logotipo original XUUMIEL con pirámides" />
+            <img
+              className="footer-regional-logo"
+              src={REGIONAL_LOGO_URL}
+              alt="Hecho en Quintana Roo"
+            />
+          </div>
           <div>
             <small>Mieles de Quintana Roo México</small>
           </div>
