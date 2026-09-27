@@ -68,7 +68,7 @@ const ARROZ_SOAP_URL =
 const SABILA_MENTA_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/zRivaShqPnxVMNue.png";
 const AVENA_SOAP_URL =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/YSJHYCIaOOhxdCcf.png";
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/SDuQgmjHmwKXzrCh.png";
 const TEPEZCOHUITE_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/CbeaSdZvQUIgabJd.png";
 const HONEYCOMB_SOAP_URL =
@@ -492,7 +492,7 @@ const products: Product[] = [
     ],
     page: 4,
     image: AVENA_SOAP_URL,
-    imageAlt: "Jabón de avena presentado en tres piezas.",
+    imageAlt: "Jabón de avena rosa con relieve de panal y abejas.",
     imageCaption: "Foto de producto · jabón de avena · presentación de 70 g",
   },
   {
@@ -755,7 +755,7 @@ const products: Product[] = [
     id: "miel-apis-750",
     name: "Miel Apis · botella de cristal nueva",
     category: "Miel Apis",
-    price: "$120",
+    price: "$130",
     size: "750 g",
     ingredient: "Miel Apis",
     description:
