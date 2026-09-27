@@ -2160,7 +2160,7 @@ export default function Home() {
           </div>
           <p className="eyebrow">Archivo de origen</p>
           <h2 id="pdf-title">
-            Catálogo XUUMIEL
+            Catálogo XUUMIEL y XUUJÁAB
             <br />
             <em>2026</em>
           </h2>
