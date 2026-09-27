@@ -64,7 +64,7 @@ const ORIGIN_URL = portableAsset(
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FxmqVvkyJSaIQvwZ.jpg"
 );
 const ARROZ_SOAP_URL =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/pDRRCxLqHbEchDKn.png";
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nZTRFFRkYAXfRVvQ.png";
 const SABILA_MENTA_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/zRivaShqPnxVMNue.png";
 const AVENA_SOAP_URL =
@@ -113,7 +113,7 @@ const MELIPONA_CACAO_30_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/qdfxRxGNuoFFNTuE.png";
 const GALLERY_URLS = {
   img8090:
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FVjiYoRnRUOswewl.png",
+    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nZTRFFRkYAXfRVvQ.png",
   img8092:
     "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/cjXqhYGENXHnNSSq.png",
   img8094:
@@ -395,21 +395,21 @@ const products: Product[] = [
   },
   {
     id: "jabon-coco-arroz",
-    name: "Jabón de coco y arroz",
+    name: "Jabón de arroz, base coco y miel Melipona",
     category: "Jabones",
     price: "$77",
     size: "70 g",
-    ingredient: "Coco · arroz",
+    ingredient: "Arroz · base coco · miel de abejas Meliponas",
     description:
-      "Jabón de arroz con base de coco. El catálogo de origen lo presenta como una barra exfoliante y suavizante para acompañar la limpieza diaria.",
+      "Xuujaab: jabón de arroz, base coco y miel de abejas Meliponas. La etiqueta lo presenta como una mascarilla exfoliante que favorece la restauración del tono de la piel, para tipo de piel regular. Contenido neto: 70 g.",
     benefits: [
-      "Exfoliación suave para retirar impurezas",
-      "Sensación de suavidad después del baño",
-      "Ayuda a mantener una apariencia uniforme de la piel",
+      "Mascarilla exfoliante",
+      "Favorece la restauración del tono de la piel",
+      "Indicado en la etiqueta para tipo de piel regular",
     ],
     page: 4,
     image: ARROZ_SOAP_URL,
-    imageAlt: "Jabón de coco y arroz con etiqueta XUUJÁAB.",
+    imageAlt: "Jabón Xuujaab de arroz, base coco y miel de abejas Meliponas, con etiqueta visible.",
     imageCaption:
       "Foto de producto · jabón de arroz base coco · presentación de 70 g",
     isProductPhoto: true,
