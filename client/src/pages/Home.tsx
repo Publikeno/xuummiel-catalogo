@@ -68,7 +68,7 @@ const ARROZ_SOAP_URL =
 const SABILA_MENTA_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/zRivaShqPnxVMNue.png";
 const AVENA_SOAP_URL =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/SDuQgmjHmwKXzrCh.png";
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/reUSzjZbwZPjjcfG.png";
 const TEPEZCOHUITE_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/CbeaSdZvQUIgabJd.png";
 const HONEYCOMB_SOAP_URL =
@@ -273,13 +273,13 @@ const catalogPages = {
 const products: Product[] = [
   {
     id: "melipona-10",
-    name: "Miel Melipona Beecheii (sin aguijón) · gotero de 10 ml",
+    name: "Miel Melipona Beecheii · gotero de 10 ml",
     category: "Miel Melipona",
     price: "$130",
     size: "10 ml",
-    ingredient: "Miel Melipona Beecheii (sin aguijón)",
+    ingredient: "Miel Melipona Beecheii",
     description:
-      "Miel Melipona Beecheii (sin aguijón) en gotero de 10 ml, una presentación pequeña para conocer su sabor floral y llevar un producto de origen regional.",
+      "Miel Melipona Beecheii en gotero de 10 ml, una presentación pequeña para conocer su sabor floral y llevar un producto de origen regional.",
     benefits: [
       "Sabor y aroma característicos de la miel Melipona",
       "Formato práctico para degustación, regalo o consumo personal",
@@ -287,19 +287,19 @@ const products: Product[] = [
     ],
     page: 17,
     image: GOTERO_30ML_URL,
-    imageAlt: "Frasco pequeño de miel Melipona Beecheii (sin aguijón) para la presentación de 10 ml.",
+    imageAlt: "Frasco pequeño de miel Melipona Beecheii para la presentación de 10 ml.",
     imageCaption:
-      "Miel Melipona Beecheii (sin aguijón) en presentación gotero · precio vigente comunicado por la tienda",
+      "Miel Melipona Beecheii en presentación gotero · precio vigente comunicado por la tienda",
   },
   {
     id: "melipona-20",
-    name: "Miel Melipona Beecheii (sin aguijón) · gotero de 20 ml",
+    name: "Miel Melipona Beecheii · gotero de 20 ml",
     category: "Miel Melipona",
     price: "$230",
     size: "20 ml",
-    ingredient: "Miel Melipona Beecheii (sin aguijón)",
+    ingredient: "Miel Melipona Beecheii",
     description:
-      "Miel Melipona Beecheii (sin aguijón) en una presentación intermedia de 20 ml para consumo personal o regalo turístico.",
+      "Miel Melipona Beecheii en una presentación intermedia de 20 ml para consumo personal o regalo turístico.",
     benefits: [
       "Perfil floral y distintivo de la miel Melipona",
       "Presentación fácil de transportar",
@@ -307,19 +307,19 @@ const products: Product[] = [
     ],
     page: 17,
     image: GOTERO_20ML_URL,
-    imageAlt: "Gotero de miel Melipona Beecheii (sin aguijón) de 20 ml, sin fondo.",
+    imageAlt: "Gotero de miel Melipona Beecheii de 20 ml, sin fondo.",
     imageCaption:
-      "Miel Melipona Beecheii (sin aguijón) en presentación gotero · precio vigente comunicado por la tienda",
+      "Miel Melipona Beecheii en presentación gotero · precio vigente comunicado por la tienda",
   },
   {
     id: "melipona-30",
-    name: "Miel Melipona Beecheii (sin aguijón) · gotero de 30 ml",
+    name: "Miel Melipona Beecheii · gotero de 30 ml",
     category: "Miel Melipona",
     price: "$320",
     size: "30 ml · frasco de cristal oscuro redondo o cuadrado",
-    ingredient: "Miel Melipona Beecheii (sin aguijón) · cristal oscuro",
+    ingredient: "Miel Melipona Beecheii · cristal oscuro",
     description:
-      "Miel Melipona Beecheii (sin aguijón) en gotero de 30 ml, disponible en dos formas de frasco de cristal oscuro: redondo y cuadrado.",
+      "Miel Melipona Beecheii en gotero de 30 ml, disponible en dos formas de frasco de cristal oscuro: redondo y cuadrado.",
     benefits: [
       "Dos formas de frasco para elegir",
       "Cristal oscuro con presentación artesanal",
@@ -327,19 +327,19 @@ const products: Product[] = [
     ],
     page: 17,
     image: GOTERO_10ML_URL,
-    imageAlt: "Frasco grande de miel Melipona Beecheii (sin aguijón) para la presentación de 30 ml.",
+    imageAlt: "Frasco grande de miel Melipona Beecheii para la presentación de 30 ml.",
     imageCaption:
       "Presentación de 30 ml · frasco redondo o cuadrado · precio vigente comunicado por la tienda",
   },
   {
     id: "melipona-50",
-    name: "Miel Melipona Beecheii (sin aguijón) · frasco cuadrado",
+    name: "Miel Melipona Beecheii · frasco cuadrado",
     category: "Miel Melipona",
     price: "$440",
     size: "50 ml · cristal oscuro cuadrado",
-    ingredient: "Miel Melipona Beecheii (sin aguijón) · cristal oscuro",
+    ingredient: "Miel Melipona Beecheii · cristal oscuro",
     description:
-      "Miel Melipona Beecheii (sin aguijón) en frasco cuadrado de cristal oscuro de 50 ml, pensado para exhibición y regalo.",
+      "Miel Melipona Beecheii en frasco cuadrado de cristal oscuro de 50 ml, pensado para exhibición y regalo.",
     benefits: [
       "Presentación cuadrada de identidad artesanal",
       "Cristal oscuro que destaca en anaquel",
@@ -353,13 +353,13 @@ const products: Product[] = [
   },
   {
     id: "melipona-estuche-50",
-    name: "Miel Melipona Beecheii (sin aguijón) · estuche pirámide de 50 ml",
+    name: "Miel Melipona Beecheii · estuche pirámide de 50 ml",
     category: "Kits y regalos",
     price: "$590",
     size: "Estuche de madera · frasco de 50 ml",
-    ingredient: "Miel Melipona Beecheii (sin aguijón) · madera",
+    ingredient: "Miel Melipona Beecheii · madera",
     description:
-      "Presentación de Miel Melipona Beecheii (sin aguijón) en un estuche de madera con forma de pirámide, creado para conservar y regalar una pieza de identidad quintanarroense.",
+      "Presentación de Miel Melipona Beecheii en un estuche de madera con forma de pirámide, creado para conservar y regalar una pieza de identidad quintanarroense.",
     benefits: [
       "Estuche de madera con alto valor de presentación",
       "Ideal para regalos turísticos y ocasiones especiales",
@@ -368,19 +368,19 @@ const products: Product[] = [
     page: 17,
     image: MELIPONA_BOX_50ML_URL,
     imageAlt:
-      "Estuche de madera abierto con frasco de miel Melipona Beecheii (sin aguijón) de 50 ml.",
+      "Estuche de madera abierto con frasco de miel Melipona Beecheii de 50 ml.",
     imageCaption:
       "Estuche de madera con frasco de 50 ml · precio vigente comunicado por la tienda",
   },
   {
     id: "melipona-estuche-600",
-    name: "Miel Melipona Beecheii (sin aguijón) · estuche pirámide de 600 ml",
+    name: "Miel Melipona Beecheii · estuche pirámide de 600 ml",
     category: "Kits y regalos",
     price: "$1,850",
     size: "Estuche de madera · presentación de 600 ml",
-    ingredient: "Miel Melipona Beecheii (sin aguijón) · madera",
+    ingredient: "Miel Melipona Beecheii · madera",
     description:
-      "Presentación grande de Miel Melipona Beecheii (sin aguijón) con estuche de madera en forma de pirámide, pensada para un regalo especial o una pieza de exhibición.",
+      "Presentación grande de Miel Melipona Beecheii con estuche de madera en forma de pirámide, pensada para un regalo especial o una pieza de exhibición.",
     benefits: [
       "Formato de mayor contenido para una ocasión especial",
       "Estuche de madera con identidad artesanal",
@@ -482,17 +482,17 @@ const products: Product[] = [
     category: "Jabones",
     price: "$37",
     size: "70 g",
-    ingredient: "Avena",
+    ingredient: "Avena · miel de abejas Meliponas",
     description:
-      "Jabón de avena para una limpieza reconfortante; el catálogo lo recomienda para piel normal y grasa por su perfil astringente.",
+      "Xuujaab: jabón de avena con miel de abejas Meliponas. La etiqueta lo presenta como una mascarilla astringente que cierra los poros, indicada para tipo de piel regular a grasa. Contenido neto: 70 g.",
     benefits: [
-      "Limpieza delicada de la piel",
-      "Sensación confortable durante el baño",
-      "Acompaña una rutina para piel normal o grasa",
+      "Mascarilla astringente",
+      "Ayuda a cerrar los poros",
+      "Indicado en la etiqueta para piel regular a grasa",
     ],
     page: 4,
     image: AVENA_SOAP_URL,
-    imageAlt: "Jabón de avena rosa con relieve de panal y abejas.",
+    imageAlt: "Jabón Xuujaab de avena y miel de abejas Meliponas, con etiqueta visible.",
     imageCaption: "Foto de producto · jabón de avena · presentación de 70 g",
   },
   {
@@ -501,7 +501,7 @@ const products: Product[] = [
     category: "Jabones",
     price: "$70",
     size: "100 g",
-    ingredient: "Cúrcuma · coco · miel Melipona Beecheii (sin aguijón)",
+    ingredient: "Cúrcuma · coco · miel Melipona Beecheii",
     description:
       "Jabón de cúrcuma con coco y miel de abejas Meliponas, elaborado para una rutina de cuidado inspirada en ingredientes tradicionales.",
     benefits: [
@@ -522,7 +522,7 @@ const products: Product[] = [
     category: "Jabones",
     price: "$77",
     size: "90 g",
-    ingredient: "Leche de cabra · miel Melipona Beecheii (sin aguijón) · fresa champagne",
+    ingredient: "Leche de cabra · miel Melipona Beecheii · fresa champagne",
     description:
       "Jabón de leche de cabra, miel Melipona y fresa champagne, con una textura cremosa para una rutina de limpieza y cuidado personal.",
     benefits: [
@@ -607,7 +607,7 @@ const products: Product[] = [
     category: "Cremas",
     price: "$320",
     size: "60 g con dispensador",
-    ingredient: "Semilla de sésamo · miel Melipona Beecheii (sin aguijón) · colágeno",
+    ingredient: "Semilla de sésamo · miel Melipona Beecheii · colágeno",
     description:
       "Crema hidratante regeneradora celular para rostro y cuello, formulada con semilla de sésamo, miel Melipona y colágeno.",
     benefits: [
@@ -628,7 +628,7 @@ const products: Product[] = [
     category: "Cremas",
     price: "$290",
     size: "50 g",
-    ingredient: "Romero · miel Melipona Beecheii (sin aguijón) · vitamina E",
+    ingredient: "Romero · miel Melipona Beecheii · vitamina E",
     description:
       "Crema reafirmante para rostro y cuello a base de romero, miel Melipona y vitamina E, pensada para una rutina nocturna de cuidado.",
     benefits: [
@@ -665,13 +665,13 @@ const products: Product[] = [
   },
   {
     id: "melipona-cacao-30",
-    name: "Miel Melipona Beecheii (sin aguijón) con cacao",
+    name: "Miel Melipona Beecheii con cacao",
     category: "Multivitamínicos",
     price: "$210",
     size: "30 g",
-    ingredient: "Miel Melipona Beecheii (sin aguijón) · cacao puro",
+    ingredient: "Miel Melipona Beecheii · cacao puro",
     description:
-      "Mezcla de miel Melipona Beecheii (sin aguijón) y cacao puro que une el perfil floral de la miel con el carácter intenso del cacao.",
+      "Mezcla de miel Melipona Beecheii y cacao puro que une el perfil floral de la miel con el carácter intenso del cacao.",
     benefits: [
       "Combina dos ingredientes de identidad regional",
       "Sabor intenso y distintivo para degustación",
@@ -680,9 +680,9 @@ const products: Product[] = [
     page: 18,
     image: MELIPONA_CACAO_30_URL,
     imageAlt:
-      "Frasco individual de miel Melipona Beecheii (sin aguijón) con cacao.",
+      "Frasco individual de miel Melipona Beecheii con cacao.",
     imageCaption:
-      "Foto de producto · miel Melipona Beecheii (sin aguijón) con cacao · presentación de 30 g",
+      "Foto de producto · miel Melipona Beecheii con cacao · presentación de 30 g",
     isProductPhoto: true,
   },
   {
@@ -734,9 +734,9 @@ const products: Product[] = [
     priceDetails: "Kit completo Tren Maya de cedro · $1,200",
     size: "Kit de 5 piezas",
     ingredient:
-      "Madera de cedro · miel de abejas Melipona beecheii (sin aguijón) · XUUMIEL · XUUJÁAB",
+      "Madera de cedro · miel de abejas Melipona beecheii · XUUMIEL · XUUJÁAB",
     description:
-      "Tren Maya elaborado con madera de cedro, pensado como regalo turístico con productos que contienen miel de abejas Melipona beecheii (sin aguijón), con las marcas XUUMIEL y XUUJÁAB. La miel aparece al frente, en la cabina del conductor del Tren Maya.",
+      "Tren Maya elaborado con madera de cedro, pensado como regalo turístico con productos que contienen miel de abejas Melipona beecheii, con las marcas XUUMIEL y XUUJÁAB. La miel aparece al frente, en la cabina del conductor del Tren Maya.",
     benefits: [
       "Miel en frasco de cristal de 50 ml",
       "Crema CHRC M · 30 g",
