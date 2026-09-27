@@ -119,7 +119,7 @@ const GALLERY_URLS = {
   img8094:
     "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/XncbeftxROyqSnSU.png",
   img8097:
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/IbraseDUEzHLDVvZ.png",
+    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/SDuQgmjHmwKXzrCh.png",
   img8103:
     "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/yHdJgNQqEyJbjCzN.png",
   img8105:
@@ -532,7 +532,7 @@ const products: Product[] = [
     ],
     page: 9,
     image: GALLERY_URLS.img8097,
-    imageAlt: "Jabón de leche de cabra y fresa champagne.",
+    imageAlt: "Jabón rosado de leche de cabra y fresa champagne con relieve de abejitas.",
     imageCaption:
       "Foto del catálogo · jabón de leche de cabra, miel Melipona y fresa champagne · presentación de 90 g",
     isProductPhoto: true,
