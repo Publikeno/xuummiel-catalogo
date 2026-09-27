@@ -424,9 +424,9 @@ const products: Product[] = [
     description:
       "Jabón de neem con base de coco para una rutina de higiene de inspiración botánica y una sensación limpia y fresca.",
     benefits: [
-      "Limpieza cotidiana con ingrediente vegetal",
-      "Acompaña el cuidado de piel seca",
+      "Limpieza cotidiana con neem y base de coco",
       "Aroma y carácter botánico del neem",
+      "Barra práctica de 70 g para la rutina diaria",
     ],
     page: 7,
     image: NEEM_HONEY_SOAP_URL,
@@ -445,9 +445,9 @@ const products: Product[] = [
     description:
       "Jabón de tepezcohuite, un ingrediente tradicional mexicano elegido para una limpieza con perfil vegetal y sensación purificante.",
     benefits: [
-      "Limpieza diaria con un ingrediente de tradición mexicana",
-      "Sensación de frescura y cuidado después del baño",
-      "Barra adecuada para integrar en kits de regalo",
+      "Limpieza diaria con tepezcohuite",
+      "Ingrediente de tradición mexicana con perfil vegetal",
+      "Barra de 100 g para uso personal o kits de regalo",
     ],
     page: 5,
     image: TEPEZCOHUITE_SOAP_URL,
@@ -467,8 +467,8 @@ const products: Product[] = [
       "Jabón de sábila y menta para una experiencia de baño ligera, fresca y aromática.",
     benefits: [
       "Sensación refrescante por la menta",
+      "Sábila y menta para una rutina ligera",
       "Limpieza suave para el uso cotidiano",
-      "Ingredientes de origen vegetal para una rutina ligera",
     ],
     page: 11,
     image: SABILA_MENTA_SOAP_URL,
@@ -505,9 +505,9 @@ const products: Product[] = [
     description:
       "Jabón de cúrcuma con coco y miel de abejas Meliponas, elaborado para una rutina de cuidado inspirada en ingredientes tradicionales.",
     benefits: [
-      "Limpieza diaria con ingrediente botánico",
+      "Limpieza diaria con cúrcuma y base de coco",
       "Aroma y color característicos de la cúrcuma",
-      "Presentación para una rutina de bienestar",
+      "Miel Melipona como parte de la fórmula artesanal",
     ],
     page: 8,
     image: TURMERIC_SOAP_URL,
@@ -526,9 +526,9 @@ const products: Product[] = [
     description:
       "Jabón de leche de cabra, miel Melipona y fresa champagne, con una textura cremosa para una rutina de limpieza y cuidado personal.",
     benefits: [
-      "Sensación cremosa durante el baño",
-      "Aroma frutal y presentación distintiva",
-      "Acompaña rutinas de cuidado para piel normal o madura",
+      "Sensación cremosa de la leche de cabra",
+      "Aroma frutal de fresa champagne",
+      "Relieve de abejitas y presentación distintiva para regalo",
     ],
     page: 9,
     image: GALLERY_URLS.img8097,
@@ -548,8 +548,8 @@ const products: Product[] = [
       "Jabón azul de presentación visual distintiva para integrar variedad a la colección de cuidado personal.",
     benefits: [
       "Limpieza cotidiana",
-      "Presentación visual diferenciada",
-      "Opción para combinar con jabones, estuches y regalos",
+      "Barra de color y presentación visual diferenciados",
+      "Opción para combinar con otros jabones y kits de regalo",
     ],
     page: null,
     image: GALLERY_URLS.img8111,
@@ -570,7 +570,7 @@ const products: Product[] = [
     benefits: [
       "Aroma floral agradable",
       "Limpieza diaria con una experiencia sensorial suave",
-      "Ideal para integrar en kits de regalo",
+      "Presentación compacta de 60 g para regalo o uso personal",
     ],
     page: 10,
     image: GALLERY_URLS.img8115,
