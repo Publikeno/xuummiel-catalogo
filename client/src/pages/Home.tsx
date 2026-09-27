@@ -1741,7 +1741,7 @@ export default function Home() {
           <p className="eyebrow dark">
             <Leaf size={16} /> Propósito central
           </p>
-          <h2 id="origin-title">Conservar la melipona es el propósito.</h2>
+          <h2 id="origin-title">Conservar a la abeja Melipona beecheii</h2>
           <div className="conservation-priority">
             <strong>Conservación y reproducción</strong>
             <span>
