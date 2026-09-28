@@ -1166,6 +1166,66 @@ const catalogPhotos: CatalogPhoto[] = [
   },
 ];
 
+type PresencePhoto = {
+  id: string;
+  title: string;
+  category: "Tienda" | "Congresos y encuentros" | "Ferias y lugares";
+  image: string | null;
+  alt: string;
+  note: string;
+};
+
+const presencePhotos: PresencePhoto[] = [
+  {
+    id: "tienda-xuumiel",
+    title: "Tienda XUUMIEL",
+    category: "Tienda",
+    image: HERO_URL,
+    alt: "Imagen de apoyo de la ruta de la miel XUUMIEL",
+    note: "Aquí colocaremos las fotografías del espacio y punto de venta.",
+  },
+  {
+    id: "congresos-encuentros",
+    title: "Congresos y encuentros",
+    category: "Congresos y encuentros",
+    image: null,
+    alt: "Espacio reservado para fotografías de congresos y encuentros",
+    note: "Agregar aquí cada congreso, charla o encuentro en el que se participó.",
+  },
+  {
+    id: "ferias-exposiciones",
+    title: "Ferias y exposiciones",
+    category: "Ferias y lugares",
+    image: null,
+    alt: "Espacio reservado para fotografías de ferias y exposiciones",
+    note: "Un espacio para documentar la presencia de la marca en ferias y exposiciones.",
+  },
+  {
+    id: "lugares-participacion",
+    title: "Lugares donde hemos participado",
+    category: "Ferias y lugares",
+    image: ORIGIN_URL,
+    alt: "Paisaje de Quintana Roo como imagen de apoyo territorial",
+    note: "Iremos sumando cada lugar y la historia de la participación.",
+  },
+  {
+    id: "talleres-comunidad",
+    title: "Talleres y comunidad",
+    category: "Congresos y encuentros",
+    image: null,
+    alt: "Espacio reservado para fotografías de talleres y actividades comunitarias",
+    note: "Para registrar talleres, demostraciones y actividades con la comunidad.",
+  },
+  {
+    id: "nuevas-participaciones",
+    title: "Nuevas participaciones",
+    category: "Ferias y lugares",
+    image: null,
+    alt: "Espacio reservado para nuevas participaciones de XUUMIEL y XUUJÁAB",
+    note: "Esta tarjeta queda lista para agregar la próxima experiencia.",
+  },
+];
+
 function GalleryCollectionIcon({
   collection,
 }: {
@@ -1524,6 +1584,7 @@ export default function Home() {
           <a href="#proyectos">Proyectos</a>
           <a href="#catalogo">Colecciones</a>
           <a href="#galeria">Galería</a>
+          <a href="#participaciones">Participaciones</a>
           <a href="#ritual">Rituales</a>
           <a href="#catalogo-pdf">Catálogo 2026</a>
         </nav>
@@ -1569,6 +1630,9 @@ export default function Home() {
             </a>
             <a href="#galeria" onClick={() => setMobileMenuOpen(false)}>
               Galería
+            </a>
+            <a href="#participaciones" onClick={() => setMobileMenuOpen(false)}>
+              Participaciones
             </a>
             <a href="#ritual" onClick={() => setMobileMenuOpen(false)}>
               Rituales
@@ -2049,6 +2113,62 @@ export default function Home() {
               </figcaption>
             </figure>
           ))}
+        </div>
+      </section>
+
+      <section
+        id="participaciones"
+        className="presence-section"
+        aria-labelledby="presence-title"
+      >
+        <div className="presence-heading">
+          <div>
+            <p className="eyebrow dark">
+              <BookOpen size={16} /> Tienda y trayectoria
+            </p>
+            <h2 id="presence-title">
+              Un álbum para recordar dónde hemos estado.
+            </h2>
+          </div>
+          <p>
+            Aquí reuniremos fotografías de la tienda, congresos, ferias,
+            talleres y todos los lugares donde XUUMIEL y XUUJÁAB han compartido
+            su trabajo.
+          </p>
+        </div>
+        <div className="presence-grid">
+          {presencePhotos.map(photo => (
+            <article
+              className={`presence-card ${photo.image ? "has-image" : "is-placeholder"}`}
+              key={photo.id}
+            >
+              <div className="presence-visual">
+                {photo.image ? (
+                  <img src={photo.image} alt={photo.alt} />
+                ) : (
+                  <div className="presence-placeholder" aria-hidden="true">
+                    <span>Foto por agregar</span>
+                    <small>JPG · PNG · WEBP</small>
+                  </div>
+                )}
+                <span className="presence-index">
+                  {String(presencePhotos.indexOf(photo) + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <div className="presence-copy">
+                <p>{photo.category}</p>
+                <h3>{photo.title}</h3>
+                <span>{photo.note}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="presence-note">
+          <Sparkles size={18} />
+          <p>
+            La sección queda lista para crecer: cada nueva fotografía puede
+            llevar fecha, ciudad, nombre del evento y una breve historia.
+          </p>
         </div>
       </section>
 

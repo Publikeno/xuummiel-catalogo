@@ -276,7 +276,27 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
 .gallery-photo-card figcaption p { margin-bottom: 0.35rem; color: var(--amber); font-size: 0.54rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
 .gallery-photo-card h3 { min-height: 2.2em; margin-bottom: 0.55rem; color: var(--cacao); font-family: "DM Serif Display", Georgia, serif; font-size: 1.12rem; font-weight: 400; line-height: 1.05; }
 .gallery-photo-card figcaption span { color: #8b7062; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
-
+.presence-section { max-width: 1370px; margin: 0 auto; padding: clamp(4rem, 7vw, 6.5rem) clamp(1.25rem, 4vw, 4rem); background: #efe2c7; }
+.presence-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(270px, 0.65fr); align-items: end; gap: 2rem 4rem; margin-bottom: 2.4rem; }
+.presence-heading h2 { max-width: 680px; margin-bottom: 1.3rem; color: var(--cacao); font-family: "DM Serif Display", Georgia, serif; font-size: clamp(2.55rem, 4vw, 4.2rem); font-weight: 400; letter-spacing: -0.04em; line-height: 0.98; }
+.presence-heading > p { max-width: 440px; margin-bottom: 0.45rem; color: #6c5144; font-size: 0.88rem; line-height: 1.7; }
+.presence-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.presence-card { min-width: 0; background: #fbf7ed; box-shadow: 0 10px 22px rgb(71 38 18 / 7%); }
+.presence-visual { position: relative; display: grid; height: 245px; place-items: center; overflow: hidden; background: radial-gradient(circle at 50% 45%, #fffdf7 0 20%, #ddc99f 78%); }
+.presence-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 220ms var(--ease-out); }
+.presence-card:hover .presence-visual img { transform: scale(1.05); }
+.presence-card.is-placeholder .presence-visual { background: repeating-linear-gradient(135deg, rgb(255 253 247 / 70%) 0 12px, rgb(225 207 169 / 42%) 12px 24px); }
+.presence-placeholder { display: grid; gap: 0.45rem; justify-items: center; padding: 1.2rem; border: 1px dashed rgb(128 91 61 / 52%); color: #795f51; text-align: center; }
+.presence-placeholder span { font-family: "DM Serif Display", Georgia, serif; font-size: 1.5rem; }
+.presence-placeholder small { color: var(--amber); font-size: 0.55rem; font-weight: 800; letter-spacing: 0.1em; }
+.presence-index { position: absolute; top: 0.75rem; left: 0.75rem; padding: 0.35rem 0.42rem; background: rgb(247 240 223 / 92%); color: var(--bark); font-size: 0.57rem; font-weight: 800; letter-spacing: 0.08em; }
+.presence-copy { padding: 0.95rem 1rem 1.1rem; }
+.presence-copy p { margin-bottom: 0.35rem; color: var(--amber); font-size: 0.54rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.presence-copy h3 { min-height: 2.25em; margin-bottom: 0.55rem; color: var(--cacao); font-family: "DM Serif Display", Georgia, serif; font-size: 1.25rem; font-weight: 400; line-height: 1.04; }
+.presence-copy span { color: #8b7062; font-size: 0.61rem; line-height: 1.5; }
+.presence-note { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.55rem; padding: 0.95rem 1rem; border-left: 3px solid var(--honey); background: rgb(255 253 247 / 62%); color: #6c5144; }
+.presence-note svg { flex: 0 0 auto; color: var(--amber); }
+.presence-note p { margin: 0; font-size: 0.68rem; line-height: 1.55; }
 .ritual-section { display: grid; grid-template-columns: minmax(340px, 0.82fr) minmax(0, 1.18fr); background: var(--cacao); color: var(--paper); }
 .ritual-art { position: relative; min-height: 635px; overflow: hidden; touch-action: pinch-zoom; }
 .ritual-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(46 27 20 / 70%), transparent 43%); }
@@ -378,6 +398,7 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
   .hero-scene { min-height: 450px; margin-left: -2rem; }
   .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .photo-gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .presence-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ritual-copy { padding-right: clamp(1.5rem, 4vw, 4rem); padding-left: clamp(1.5rem, 5vw, 4.5rem); }
   .site-footer { grid-template-columns: 1fr 1fr; }
   .site-footer > p { grid-column: span 2; grid-row: 2; }
@@ -423,8 +444,10 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
   .projects-heading { grid-template-columns: 1fr; gap: 0.3rem; margin-bottom: 1.8rem; }
   .projects-grid { grid-template-columns: 1fr; }
   .gallery-heading { grid-template-columns: 1fr; gap: 0.3rem; margin-bottom: 1.8rem; }
+  .presence-heading { grid-template-columns: 1fr; gap: 0.3rem; margin-bottom: 1.8rem; }
   .catalog-heading h2, .origin-copy h2, .story-heading h2, .projects-heading h2, .ritual-copy h2, .kits-intro h2, .pdf-copy h2 { font-size: clamp(2.7rem, 11vw, 4rem); }
   .gallery-heading h2 { font-size: clamp(2.7rem, 11vw, 4rem); }
+  .presence-heading h2 { font-size: clamp(2.7rem, 11vw, 4rem); }
   .catalog-meta { margin-top: 0.8rem; }
   .catalog-meta-note { display: none; }
   .gallery-meta-note { display: none; }
@@ -432,6 +455,11 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
   .photo-gallery-section { padding-bottom: 4.5rem; }
   .photo-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gallery-photo-visual { height: 175px; }
+  .presence-section { padding: 4rem 1.25rem 4.5rem; }
+  .presence-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; }
+  .presence-visual { height: 175px; }
+  .presence-copy { padding: 0.8rem 0.75rem 0.9rem; }
+  .presence-copy h3 { font-size: 1.1rem; }
   .product-visual { height: 165px; }
   .product-copy { padding: 0.9rem 0.82rem 0.95rem; }
   .product-heading-row { display: block; }
