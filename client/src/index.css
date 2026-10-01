@@ -384,6 +384,9 @@ h1 em, h2 em { color: var(--amber); font-style: italic; }
 .product-benefits ul { display: grid; gap: 0.45rem; margin: 0; padding: 0; list-style: none; }
 .product-benefits li { position: relative; padding-left: 1rem; color: #735747; font-size: 0.68rem; line-height: 1.5; }
 .product-benefits li::before { content: ""; position: absolute; top: 0.52rem; left: 0; width: 0.35rem; height: 0.35rem; border-radius: 999px; background: var(--honey); }
+.product-usage { margin: 0 0 1.55rem; border-left: 2px solid var(--honey); padding: 0.75rem 0.9rem; background: rgb(214 146 42 / 9%); }
+.product-usage .product-benefits-title { margin-bottom: 0.35rem; }
+.product-usage p:last-child { margin: 0; color: #735747; font-size: 0.68rem; line-height: 1.55; }
 .product-source-link { display: inline-flex; align-items: center; gap: 0.4rem; width: fit-content; border-bottom: 1px solid var(--honey); padding-bottom: 0.2rem; color: var(--amber); font-size: 0.63rem; font-weight: 800; letter-spacing: 0.065em; text-decoration: none; text-transform: uppercase; }
 .product-source-link:hover { color: var(--cacao); }
 
