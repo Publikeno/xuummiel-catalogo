@@ -71,8 +71,6 @@ const AVENA_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/reUSzjZbwZPjjcfG.png";
 const TEPEZCOHUITE_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/CbeaSdZvQUIgabJd.png";
-const HONEYCOMB_SOAP_URL =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/DdIYdkhuGAzvNQIX.png";
 const NEEM_HONEY_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/YKDMKUwclKywVitS.png";
 const TURMERIC_SOAP_URL =
