@@ -79,6 +79,8 @@ const STRAWBERRY_SOAP_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/KTJzlUwgSbTFuXuM.png";
 const RCH_CREAM_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/sABTLISpVCTBrjSM.png";
+const RCH_CREAM_260G_URL =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/hvSwOhXnLppvHKPC.png";
 const CRVE_CREAM_URL =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/dCopQCDqGlMjyLqQ.png";
 const HONEY_URL =
@@ -475,18 +477,18 @@ const products: Product[] = [
     isProductPhoto: true,
   },
   {
-    id: "crema-rch-hidratante-250",
+    id: "crema-rch-hidratante-260",
     name: "RCH crema regeneradora celular hidratante para rostro y cuello",
     category: "Cremas",
     price: "$1100",
-    size: "250 g",
+    size: "260 g",
     ingredient: "Semilla de sésamo · miel Melipona · colágeno",
     description: "Crema regeneradora celular hidratante para rostro y cuello de semilla de sésamo, miel Melipona y colágeno.",
     benefits: ["Protege de los radicales libres", "Previene y disminuye arrugas, líneas de expresión y estrías con el uso constante", "Contribuye a que la piel se mantenga hidratada y regenere células", "Útil como protector solar y base de maquillaje", "Puede ayudar a limpiar el maquillaje y aliviar quemaduras"],
     page: 13,
-    image: RCH_CREAM_URL,
-    imageAlt: "Crema RCH regeneradora celular hidratante de 250 gramos.",
-    imageCaption: "Presentación oficial del PDF · 250 g · $1100 pesos",
+    image: RCH_CREAM_260G_URL,
+    imageAlt: "Crema RCH regeneradora celular hidratante de 260 gramos, en envase con dispensador y fondo transparente.",
+    imageCaption: "Presentación comunicada por la tienda · 260 g · $1100 pesos",
     isProductPhoto: true,
   },
   {
