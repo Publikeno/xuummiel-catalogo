@@ -1248,17 +1248,7 @@ export default function Home() {
           <a href="#galeria">Galería</a>
           <a href="#participaciones">Participaciones</a>
           <a href="#ritual">Rituales</a>
-          <a href="#catalogo-pdf">Catálogo 2026</a>
         </nav>
-
-        <a
-          className="header-catalog-link"
-          href={PDF_URL}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Ver catálogo visual <ArrowUpRight size={16} />
-        </a>
         <button
           type="button"
           className="mobile-menu-trigger"
@@ -1313,14 +1303,6 @@ export default function Home() {
                     : "Añadir tienda al celular"}
               </button>
             )}
-            <a
-              href={PDF_URL}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Abrir catálogo visual
-            </a>
           </nav>
         )}
       </header>
@@ -1931,60 +1913,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="catalogo-pdf"
-        className="pdf-section"
-        aria-labelledby="pdf-title"
-      >
-        <div className="pdf-copy">
-          <div className="pdf-symbol" aria-hidden="true">
-            <BookOpen size={29} />
-          </div>
-          <p className="eyebrow">Archivo de origen</p>
-          <h2 id="pdf-title">
-            Catálogo XUUMIEL y XUUJÁAB
-            <br />
-            <em>2026</em>
-          </h2>
-          <p>
-            Consulta las láminas visuales de la edición compartida. Para
-            precios, tamaños y fichas vigentes, toma como fuente principal el
-            catálogo web actualizado.
-          </p>
-          <a
-            className="primary-action pdf-action"
-            href={PDF_URL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Abrir catálogo visual <ArrowUpRight size={17} />
-          </a>
-        </div>
-        <div className="pdf-stack" aria-hidden="true">
-          <div className="pdf-sheet pdf-sheet-back">
-            <img src={catalogPages.p18} alt="" />
-          </div>
-          <div className="pdf-sheet pdf-sheet-mid">
-            <img src={catalogPages.p13} alt="" />
-          </div>
-          <a
-            className="pdf-sheet pdf-sheet-front"
-            href={PDF_URL}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Abrir el catálogo de XUUMIEL en PDF"
-          >
-            <img
-              src={catalogPages.p04}
-              alt="Portada de una lámina de jabones del catálogo XUUMIEL"
-            />
-            <span>
-              Catálogo en PDF <ArrowUpRight size={16} />
-            </span>
-          </a>
-        </div>
-      </section>
-
       <footer className="site-footer">
         <div className="footer-brand">
           <div className="footer-brand-logos">
@@ -1999,16 +1927,9 @@ export default function Home() {
             <small>Mieles de Quintana Roo México</small>
           </div>
         </div>
-        <p>
-          Catálogo web actualizado con los precios y presentaciones comunicados
-          por la tienda. El PDF enlazado conserva la edición visual original y
-          funciona como referencia de imágenes.
-        </p>
+        <p>Catálogo web actualizado con los precios y presentaciones comunicados por la tienda.</p>
         <div className="footer-links">
           <a href="#inicio">Volver arriba</a>
-          <a href={PDF_URL} target="_blank" rel="noreferrer">
-            Abrir PDF
-          </a>
         </div>
       </footer>
 
